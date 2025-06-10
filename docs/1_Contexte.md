@@ -60,8 +60,15 @@ Ce critère permet de comparer le rapport signal sur bruit (SNR en anglais) de s
 
 Afin de rendre les données des stations de différents réseaux lisibles par tous, un **format standard** a été proposé par l’IGS : le **Rinex**. 
 
-Un fichier Rinex est un fichier **ASCII**, constitué de :
+Un fichier Rinex est un fichier **ASCII** (extension .rnx), constitué de :
 
 - Un **en-tête** contenant les méta-données utiles.
 
 - Une **liste des observations** pour chaque satellite visible, à chaque instant d’échantillonnage.
+
+Comme dit précédemment, le fichier Rinex que notre module Python devra lire et analyser est issus de la station GODS de l’institut Goddard (NASA). 
+
+Il s’agit de 24h d’observations GNSS datant du 4 mai 2024, échantillonnées avec un pas de 30 s. 
+Il contient des données provenant de 4 stations GNSS : GPS (USA), GLONASS (Russie), GALILEO (Europe) et Beidou (Chine).
+
+Il s’agit du fichier « GODS00USA_R_20241250000_01D_30S_MO.rnx » que vous trouverez [ici](https://github.com/NicOudart/UVSQ_M2_NewSpace_TP_Python/tree/main/example).

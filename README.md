@@ -1,6 +1,6 @@
 # M2 NewSpace : Traitement de données avec Python
 
-![Logo](docs/img/M2NS_logo.png){width="250"}
+![Logo](docs/img/M2NS_logo.png)
 
 _Cours conçu pour les étudiants du M2 "NewSpace" de l'Université de Versailles Saint-Quentin (UVSQ)_
 

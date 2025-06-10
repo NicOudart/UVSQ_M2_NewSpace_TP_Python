@@ -31,7 +31,7 @@ Les formes les plus modernes de navigation GNSS permettent en post-traitement d�
 
 Voici un schéma de principe de cette méthode :
 
-![RTK](docs/img/RTK.jpg)
+![RTK](img/RTK.jpg)
 
 Une telle méthode nécessite donc :
 
@@ -45,7 +45,7 @@ Certains sont privés et vendent ces données, d’autres sont publics et metten
 L’« International GNSS Service » (**IGS**) est une fédération internationale d’agences / institutions / universités, mettant à disposition les observations de 512 stations situées dans 118 pays. 
 Dans le cadre de ce tutoriel, nous allons étudier des données issues d’une station IGS : la **station GODS** appartenant à l’institut « Goddard Space Flight Center » (dépendance de la NASA située dans le Maryland).
 
-![GODS](docs/img/GODS.jpg)
+![GODS](img/GODS.jpg)
 
 Pour répondre au 2nd besoin, les données GNSS contiennent en général un **indicateur de qualité du signal** de chaque satellite, appelé le **C/N0**.
 

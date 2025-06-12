@@ -114,11 +114,11 @@ Pour un satellite GPS, on aura par exemple : C1C L1C S1C C1W L1W S1W C2X L2X S2X
 
 Les observations "S1C" qui nous interessent seront donc sur la **3ème colonne après l'identifiant du satellite**.
 
-## Objectif de notre exemple
+## Définition du besoin
 
 Comme mentionné précédemment, pour notre exemple nous allons développer un logiciel qui déterminera le satellite GPS "pivot" à chaque instant pour les observations de GODS.
 
-Lors de ce TP, nous allons donc créer une bibliothèque Python qui devra être capable de :
+Lors de ce TP, nous allons donc créer une **bibliothèque Python** qui devra être capable de :
 
 - **Lire** dans un fichier Rinex les **observations S1C** correspondant à chaque satellite GPS, à chaque instant.
 

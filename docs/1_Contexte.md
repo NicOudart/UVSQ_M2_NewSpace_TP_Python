@@ -109,7 +109,7 @@ On observe une série de lignes :
 
 - Les lignes suivantes démarrent par l'identifiant (appelé "PRN") du satellite, puis contiennent les données des observations correspondantes.
 
-Les données sur une lignes sont dans le même ordre que le tableau donné en en-tête.
+Les données sur une lignes sont **dans le même ordre que le tableau donné en en-tête**.
 Pour un satellite GPS, on aura par exemple : C1C L1C S1C C1W L1W S1W C2X L2X S2X C2W L2W S2W C5X L5X S5X C1X L1X S1X.
 
 Les observations "S1C" qui nous interessent seront donc sur la **3ème colonne après l'identifiant du satellite**.

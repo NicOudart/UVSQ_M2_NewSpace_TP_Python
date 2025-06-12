@@ -107,7 +107,7 @@ On observe une série de lignes :
 
 - Quand une ligne démarre par >, cela signifie que l’on va donner **une date** sur cette ligne, et que les lignes qui vont suivre contiendront les données d’observations correspondant à cette date. Les 6 premiers chiffres de cette ligne sont : **année – mois – jour – heure – minute – seconde**.
 
-- Les lignes suivantes démarrent par l'identifiant (appelé "PRN") du satellite, puis contiennent les données des observations correspondantes.
+- Les lignes suivantes démarrent par l'**identifiant** (appelé "PRN") du satellite, puis contiennent les données des **observations** correspondantes.
 
 Les données sur une lignes sont **dans le même ordre que le tableau donné en en-tête**.
 Pour un satellite GPS, on aura par exemple : C1C L1C S1C C1W L1W S1W C2X L2X S2X C2W L2W S2W C5X L5X S5X C1X L1X S1X.

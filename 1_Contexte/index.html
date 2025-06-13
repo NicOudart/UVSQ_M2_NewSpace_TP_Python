@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nicolas OUDART" /><link rel="canonical" href="https://nicoudart.github.io/UVSQ_M2_NewSpace_TP_Python/1_Contexte/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>1. Contexte - UVSQ_M2_NewSpace_TP_Python</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "1. Contexte";
+        var mkdocs_page_input_path = "1_Contexte.md";
+        var mkdocs_page_url = "/UVSQ_M2_NewSpace_TP_Python/1_Contexte/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UVSQ_M2_NewSpace_TP_Python
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">1. Contexte</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gnss-et-rtk">GNSS et RTK</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fichiers-rinex">Fichiers Rinex</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#definition-du-besoin">Définition du besoin</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../2_Module_python/">2. Mise en forme du module Python</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../3_Lecture_fichier/">3. Lecture du fichier</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../4_Traitement_donnees/">4. Traitement des données</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../5_Export_affichage/">5. Export et affichage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../6_Exemples_tests/">6. Exemples et tests</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../7_Documentation/">7. Documentation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UVSQ_M2_NewSpace_TP_Python</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">1. Contexte</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="etape-1-contexte-du-tutoriel">Etape 1 : Contexte du tutoriel</h1>
+<p>Lors de ce tutoriel, nous allons créer un module Python pour une application concrète : <strong>la récupération et le traitement de données GNSS</strong>.</p>
+<hr />
+<h2 id="gnss-et-rtk">GNSS et RTK</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Définition du GNSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">On appelle GNSS la généralisation du système de positionnement par satellite GPS (américain) à d'autres constellations (GALILEO, Beidou, GLONASS, etc.).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ce sont les initiales de "Global Navigation Satellite System".</td>
+</tr>
+</tbody>
+</table>
+<p>Le principe du <strong>GNSS</strong> est le suivant : utiliser le <strong>temps de retard</strong> entre l’émission de signaux par des satellites et leur réception par un appareil au sol, afin de <strong>localiser</strong> cet appareil.</p>
+<p>Pour localiser un récepteur au sol, il faut donc au minimum :</p>
+<ul>
+<li>
+<p>La <strong>position des satellites</strong>, généralement fournies par l'émetteur sous forme d’éphémérides.</p>
+</li>
+<li>
+<p>Les « <strong>pseudo-distances</strong> » entre le récepteur et au moins 4 satellites, calculées par le récepteur à partir des temps de retard de réception des signaux.  </p>
+</li>
+</ul>
+<p>Les mesures de pseudo-distance étant entachées de nombreuses sources d’erreurs (erreurs d’horloges, erreurs d’éphémérides, erreurs atmosphériques, multi-trajets dus à des obstacles, bruits dans les signaux), on obtient en général rarement mieux qu’une précision métrique sur la position du récepteur.</p>
+<p>Les formes les plus modernes de navigation GNSS permettent en post-traitement d’obtenir une <strong>précision centimétrique</strong>, en se basant sur la stratégie "Real-Time Kinematics" (<strong>RTK</strong>) :</p>
+<ul>
+<li>
+<p>Ne pas utiliser les temps de retard pour estimer les distances satellite-récépteur, mais la <strong>phase du signal</strong>, qui est moins affectée par le bruit.</p>
+</li>
+<li>
+<p>Utiliser un <strong>satellite de référence</strong> nommé « pivot », afin de compenser par soustraction les erreurs côté récepteur.</p>
+</li>
+<li>
+<p>Utiliser une <strong>station au sol de référence</strong> à proximité du récepteur (quelques dizaines de km maximum), afin de compenser par soustraction les erreurs côté satellite.</p>
+</li>
+</ul>
+<p>Voici un schéma de principe de cette méthode :</p>
+<p><img alt="RTK" src="../img/RTK.jpg" /></p>
+<p>Une telle méthode nécessite donc :</p>
+<ul>
+<li>
+<p>Des données issues d'un <strong>réseau mondial de stations de référence</strong> GNSS.</p>
+</li>
+<li>
+<p>Un critère de sélection pour le <strong>choix du satellite de référence</strong> ("pivot").</p>
+</li>
+</ul>
+<p>Pour répondre au 1er besoin, des réseaux de stations ont effectivement été mis en place, enregistrant 24h/24 les signaux GNSS avec un pas de 30 ou 1 s, pour les principales constellations GNSS. 
+Certains sont privés et vendent ces données, d’autres sont publics et mettent à disposition ces données gratuitement.</p>
+<p>L’« International GNSS Service » (<strong>IGS</strong>) est une fédération internationale d’agences / institutions / universités, mettant à disposition les observations de 512 stations situées dans 118 pays. 
+Dans le cadre de ce tutoriel, nous allons étudier des données issues d’une station IGS : la <strong>station GODS</strong> appartenant à l’institut « Goddard Space Flight Center » (dépendance de la NASA située dans le Maryland).</p>
+<p><img alt="GODS" src="../img/GODS.jpg" /></p>
+<p>Pour répondre au 2nd besoin, les données GNSS contiennent en général un <strong>indicateur de qualité du signal</strong> de chaque satellite, appelé le <strong>C/N0</strong>.</p>
+<p>Ce critère permet de comparer le rapport signal sur bruit (SNR en anglais) de satellite fonctionnant sur des bandes de fréquences différentes.
+<strong>Plus le C/N0 est élevé, meilleure est la qualité du signal</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Objectif du module Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Le module Python que nous allons coder dans ce tutoriel permettra de traiter les données C/N0 de la station GODS, afin de choisir un satellite pivot pour chaque mesure GNSS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fichiers-rinex">Fichiers Rinex</h2>
+<p>Afin de rendre les données des stations de différents réseaux lisibles par tous, un <strong>format standard</strong> a été proposé par l’IGS : le <strong>Rinex</strong>. </p>
+<p>Un fichier Rinex est un fichier <strong>ASCII</strong> (extension .rnx), constitué de :</p>
+<ul>
+<li>
+<p>Un <strong>en-tête</strong> contenant les méta-données utiles.</p>
+</li>
+<li>
+<p>Une <strong>liste des observations</strong> pour chaque satellite visible, à chaque instant d’échantillonnage.</p>
+</li>
+</ul>
+<p>Comme dit précédemment, le fichier Rinex que notre module Python devra lire et analyser est issus de la station GODS de l’institut Goddard (NASA). </p>
+<p>Il s’agit de 24h d’observations GNSS datant du 4 mai 2024, échantillonnées avec un pas de 30 s. 
+Il contient des données provenant de 4 stations GNSS : GPS (USA), GLONASS (Russie), GALILEO (Europe) et Beidou (Chine).</p>
+<p>Il s’agit du fichier « GODS00USA_R_20241250000_01D_30S_MO.rnx » que vous trouverez <a href="https://github.com/NicOudart/UVSQ_M2_NewSpace_TP_Python/tree/main/example">ici</a>.</p>
+<p>Ouvrez le fichier dans un éditeur de texte quelconque.</p>
+<p>Vous pouvez voir l'en-tête du fichier, dont la fin est indiquée par la balise "END OF HEADER".</p>
+<p><img alt="En-tête Rinex" src="../img/Rinex_header.png" /></p>
+<p>Parmi les méta-données de l'en-tête, on trouve dans le tableau encadré en rouge les types d'observations reçues par GODS.</p>
+<p>Il est indiqué que ce tableau contient les informations "SYS / # / OBS TYPES" : </p>
+<ul>
+<li>
+<p>La <strong>constellation</strong> : G pour GPS, R pour GLONASS, E pour GALILEO, C pour Beidou.</p>
+</li>
+<li>
+<p>Le <strong>nombre</strong> de types d'observations.</p>
+</li>
+<li>
+<p>Les <strong>types d'observations</strong>, désignés par leur code.</p>
+</li>
+</ul>
+<p>Le code d'un type d'observation s'écrit avec <strong>3 caractères</strong> :</p>
+<ul>
+<li>
+<p>Une lettre indicant s'il s'agit d'une <strong>pseudo-distance</strong> (C), une <strong>phase</strong> (L), un <strong>Doppler</strong> (D), ou un <strong>C/N0</strong> (S).</p>
+</li>
+<li>
+<p>Un chiffre indicant le <strong>canal de fréquences</strong>. Par exemple, on a 1 pour le canal L1, correspondant à 1575.42 MHz.</p>
+</li>
+<li>
+<p>Une lettre indicant l'<strong>encodage des données</strong> : Par exemple, on a C pour un encodage "C/A".</p>
+</li>
+</ul>
+<p>Dans le cadre de ce TP, nous allons nous concentrer sur les observations de C/N0 obtenues pour les satellites GPS, avec le canal de fréquences L1 et un encodage C/A : <strong>S1C</strong>.</p>
+<p>Après l'en-tête se trouvent les données proprement dites.</p>
+<p><img alt="Contenu Rinex" src="../img/Rinex_content.png" /></p>
+<p>On observe une série de lignes :</p>
+<ul>
+<li>
+<p>Quand une ligne démarre par &gt;, cela signifie que l’on va donner <strong>une date</strong> sur cette ligne, et que les lignes qui vont suivre contiendront les données d’observations correspondant à cette date. Les 6 premiers chiffres de cette ligne sont : <strong>année – mois – jour – heure – minute – seconde</strong>.</p>
+</li>
+<li>
+<p>Les lignes suivantes démarrent par l'<strong>identifiant</strong> (appelé "PRN") du satellite, puis contiennent les données des <strong>observations</strong> correspondantes.</p>
+</li>
+</ul>
+<p>Les données sur une lignes sont <strong>dans le même ordre que le tableau donné en en-tête</strong>.
+Pour un satellite GPS, on aura par exemple : C1C L1C S1C C1W L1W S1W C2X L2X S2X C2W L2W S2W C5X L5X S5X C1X L1X S1X.</p>
+<p>Les observations "S1C" qui nous interessent seront donc sur la <strong>3ème colonne après l'identifiant du satellite</strong>.</p>
+<h2 id="definition-du-besoin">Définition du besoin</h2>
+<p>Comme mentionné précédemment, pour notre exemple nous allons développer un logiciel qui déterminera le satellite GPS "pivot" à chaque instant pour les observations de GODS.</p>
+<p>Lors de ce TP, nous allons donc créer une <strong>bibliothèque Python</strong> qui devra être capable de :</p>
+<ul>
+<li>
+<p><strong>Lire</strong> dans un fichier Rinex les <strong>observations S1C</strong> correspondant à chaque satellite GPS, à chaque instant.</p>
+</li>
+<li>
+<p><strong>Stocker</strong> ces observations en fonction du temps et du satellite, dans un tableau.</p>
+</li>
+<li>
+<p>Réaliser des <strong>affichages graphiques</strong> de S1C en fonction du temps pour chaque satellite.</p>
+</li>
+<li>
+<p>A partir des observations S1C, <strong>déterminer pour chaque instant le satellite "pivot"</strong> idéal.</p>
+</li>
+<li>
+<p><strong>Exporter</strong> sous la forme d'un fichier CSV le satellite pivot choisi pour chaque instant.</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Accueil"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2_Module_python/" class="btn btn-neutral float-right" title="2. Mise en forme du module Python">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../2_Module_python/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

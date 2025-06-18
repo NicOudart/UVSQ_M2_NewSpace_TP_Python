@@ -36,7 +36,7 @@ Créez un dossier sur votre ordinateur, du nom de "PyS1C", qui contiendra notre 
 Dans ce dossier, créez des sous-dossiers "src", "docs", "examples" et "test".
 Créez aussi des fichiers vides "readme.md", "requirements.txt" et "setup.py".
 
-Nous allons commencer à remplir ces sous-dossiers / documents, et ajouter les fichiers nécessaires pour que ce module soit installable.
+Dans cette partie du tutoriel, nous allons commencer à remplir ces sous-dossiers et fichiers.
 
 ## Dossier src et Packages
 

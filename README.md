@@ -10,7 +10,7 @@ Ce cours est une introduction au traitement de données avec Python, dans le but
 
 L'objectif est qu'à la fin de ce cours vous soyez capables de :
 
-- Créer un module Python structuré, avec exemples, tests et documentation en Markdown.
+- Créer un projet Python structuré, avec exemples, tests et documentation en Markdown.
 
 - Importer des données sous Python depuis un fichier ASCII quelconque.
 

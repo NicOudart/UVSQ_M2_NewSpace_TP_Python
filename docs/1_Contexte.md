@@ -1,6 +1,6 @@
 # Etape 1 : Contexte du tutoriel
 
-Lors de ce tutoriel, nous allons créer un module Python pour une application concrète : **la récupération et le traitement de données GNSS**.
+Lors de ce tutoriel, nous allons créer un projet Python pour une application concrète : **la récupération et le traitement de données GNSS**.
 
 ---
 
@@ -52,9 +52,9 @@ Pour répondre au 2nd besoin, les données GNSS contiennent en général un **in
 Ce critère permet de comparer le rapport signal sur bruit (SNR en anglais) de satellite fonctionnant sur des bandes de fréquences différentes.
 **Plus le C/N0 est élevé, meilleure est la qualité du signal**.
 
-|Objectif du module Python|
+|Objectif du projet Python|
 |:-|
-|Le module Python que nous allons coder dans ce tutoriel permettra de traiter les données C/N0 de la station GODS, afin de choisir un satellite pivot pour chaque mesure GNSS.|
+|Le projet Python que nous allons coder dans ce tutoriel permettra de traiter les données C/N0 de la station GODS, afin de choisir un satellite pivot pour chaque mesure GNSS.|
 
 ## Fichiers Rinex
 
@@ -66,7 +66,7 @@ Un fichier Rinex est un fichier **ASCII** (extension .rnx), constitué de :
 
 - Une **liste des observations** pour chaque satellite visible, à chaque instant d’échantillonnage.
 
-Comme dit précédemment, le fichier Rinex que notre module Python devra lire et analyser est issus de la station GODS de l’institut Goddard (NASA). 
+Comme dit précédemment, le fichier Rinex que notre projet Python devra lire et analyser est issus de la station GODS de l’institut Goddard (NASA). 
 
 Il s’agit de 24h d’observations GNSS datant du 4 mai 2024, échantillonnées avec un pas de 30 s. 
 Il contient des données provenant de 4 stations GNSS : GPS (USA), GLONASS (Russie), GALILEO (Europe) et Beidou (Chine).

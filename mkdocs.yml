@@ -7,7 +7,7 @@ theme:
 nav:
   - Accueil: index.md
   - 1. Contexte: 1_Contexte.md
-  - 2. Mise en forme du module Python: 2_Module_python.md
+  - 2. Mise en forme du module Python: 2_Projet_python.md
   - 3. Lecture du fichier: 3_Lecture_fichier.md
   - 4. Traitement des données: 4_Traitement_donnees.md
   - 5. Export et affichage: 5_Export_affichage.md

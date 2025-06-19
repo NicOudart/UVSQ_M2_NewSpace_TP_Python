@@ -70,12 +70,12 @@ Dans ce dossier, créez les modules vides suivants :
 
 - "function_export.py"
 
-Afin qu'un dossier contenant des modules soit reconnu comme un package, il faut qu'il contienne un fichier "_init_.py", appelé **initialisateur**.
+Afin qu'un dossier contenant des modules soit reconnu comme un package, il faut qu'il contienne un fichier "\_init_.py", appelé **initialisateur**.
 Comme son nom l'indique, il est executé automatiquement à l'initialisation du package.
 
 Ce fichier peut en théorie être vide, mais on s'en sert souvent pour importer les fonctions de tous les modules du package.
 
-Pour notre tutoriel, créez un fichier "_init_.py" dans le package "PyS1C", contenant les commandes suivantes :
+Pour notre tutoriel, créez un fichier "\_init_.py" dans le package "PyS1C", contenant les commandes suivantes :
 
 ~~~
 from .function_read import read

@@ -11,7 +11,7 @@ Cependant, il y a quelques "bonnes pratiques" suivies par la plupart des dévelo
 
 En génénal, un projet Python est rangé dans un dossier contenant au minimum les éléments suivants :
 
-![RTK](img/projet_structure.png)
+![Structure du projet](img/Projet_structure.png.png)
 
 On y trouve 4 sous-dossiers :
 

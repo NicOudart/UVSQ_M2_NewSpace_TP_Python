@@ -109,7 +109,7 @@ En attendant, créez dans votre dossier "docs" un fichier Markdown vide "PyS1C_d
 
 En général, des scripts Python d'**exemple** et de **test** d'un projet sont rangés dans les dossiers "examples" et "test".
 
-Les scripts d'exemple permettent à un utilisateur d'appliquer les différentes fonctionnalités du projet Python à un exemple simple, afin de comprendre rapidement son fonctionnement.
+Les scripts d'exemple permettent à un utilisateur d'appliquer les différentes fonctionnalités du projet Python à un **exemple simple**, afin de comprendre rapidement son fonctionnement.
 
 Dans le cadre de ce tutoriel, nous implémenterons un unique script d'exemple, en fournissant un fichier Rinex d'exemple provenant de la station GODS.
 
@@ -130,12 +130,139 @@ Vous trouverez souvent dans les tests automatiques d'un projet de programmation 
 
 Dans le cadre de ce tutoriel, nous n'implémenterons que les tests unitaires, sous la forme d'un unique script Python.
 
-Créez dans le dossier "test" un script Python vide "Py_S1C_unit_test.py" :
+Créez dans le dossier "test" un script Python vide "PyS1C_unit_test.py" :
 
 ![Structure des tests](img/Test_structure.png)
 
 ## Readme
 
+Le fichier "Readme" d'un projet de programmation est en quelque sorte sa "4ème de courverture" : c'est le fichier qui doit absolument **être lu avant d'utiliser le projet**.
+
+Ce fichier contient en général les informations suivantes :
+
+- Description rapide du contenu.
+
+- Comment installer le projet.
+
+- Des mises à jours récentes ou des bugs connus.
+
+- Les crédits, remerciements et licences.
+
+Dans le cas des projets Python, ils sont souvent écrit en langage Markdown.
+
+Ajoutez ce code Markdown à votre fichier "README.md" :
+
+```
+#PyS1C
+
+Python project for the selection of the pivot GPS satellite from a Rinex file.
+
+## Overview
+
+PyS1C is a set of tools for the selection of a pivot GPS satellite in the context of Real-Time Kinematics (RTK) positionning.
+The C/N0 from L1 GPS signals (S1C) is exctracted from a Rinex file, and the pivot determined at each epoch as the GPS satellite having the highest C/N0.
+Results can be output as a figure or as a CSV file. 
+
+## Installation
+
+**Installation:**
+~~~
+pip install PyS1C
+~~~
+
+**Update:**
+~~~
+pip install PyS1C --upgrade
+~~~
+
+**Import:**
+~~~
+import PyS1C
+~~~
+
+## Changelog
+
+- **Version 1.0** : adding 4 functions to the PyS1C package (read, display, pivot, export).
+
+## Support
+
+Contact us at: arthur.dent@latmos.ipsl.fr
+
+## Credits
+
+© Arthur DENT
+
+## License
+
+This package is released under a MIT open source license. 
+```
+
+Vous pouvez déjà reconnaitre les différentes sections basiques d'un Readme.
+Nous expliquerons la syntaxe du Markdown plus tard dans ce tutoriel, lorsque écrirons la documentation de notre projet.
+
 ## Requirements
 
+Lorsque le projet nécessite des **bibliothèques Python** particulières pour fonctionner (pas contenues dans les bibliothèques standards), il est possible de les indiquer dans un fichier "requirements.txt".
+
+Lors de l'installation du projet avec une commande "pip", les bibliothèques manquantes seront automatiquement installées.
+
+Notre projet nécessitera les bibliothèques : "Pandas" pour la manipulation de données, "Matplotlib" pour l'affichage graphique.
+
+Ajoutez donc ces 2 lignes à votre fichier "requirements.txt" :
+
+~~~
+pandas
+matplotlib
+~~~
+
 ## Setup
+
+Pour être **installable** avec une simple commande "**pip**", votre projet doit contenir un script "setup.py", passant à une fonction "**setup**" toutes les informations nécessaires à sa **distribution**.
+
+Complétez votre fichier "setup.py" avec le programme suivant :
+
+~~~
+from setuptools import setup,find_packages
+
+setup(name='PyS1C',
+version='1.0',
+description='Python project for the selection of pivot satellite from S1C GPS signals',
+long_description=open("README.md").read(),
+long_description_content_type='text/markdown',
+author='Arthur DENT',
+author_email='arthur.dent@latmos.ipsl.fr',
+packages=find_packages('src'),
+install_requires=open("requirements.txt").read(),
+package_dir={ '' : 'src' },
+python_requires='>=3.7',
+zip_safe=False,
+keywords=['GPS','pivot','C/N0','Rinex','S1C'],
+classifiers=[
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent',
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering :: Information Analysis'])
+~~~
+
+Vous pouvez voir que l'on fourni à la fonction "setup" les informations suivantes sur le projet :
+
+- Le nom.
+- La version.
+- Une courte description.
+- Une longue description (ici le Readme en Markdown).
+- L'auteur et son contact.
+- Les différents packages (on peut donner une liste de noms, ici on utilise la fonction "find_packages" qui recherche automatiquement les packages dans un dossier).
+- Les bibliothèques particulières nécessaires (dans le fichier requirements).
+- La version de Python minimale nécessaire.
+- Les mots-clés associés.
+- Des "classifiers" décrivant à qui s'adresse ce projet : [classifiers](https://pypi.org/classifiers).
+
+D'autres informations peuvent être fournies en entrée de "setup", et certaines ne sont pas obligatoires.
+
+Ce programme s'executera à l'installation de votre projet.
+
+---
+
+Vous avez à présent la structure de base de votre projet !
+Dans la suite, nous allons voir comment remplir les fichiers que nous avons laissés vides.

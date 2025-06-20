@@ -129,3 +129,5 @@ Lors de ce TP, nous allons donc créer une **bibliothèque Python** qui devra ê
 - A partir des observations S1C, **déterminer pour chaque instant le satellite "pivot"** idéal.
 
 - **Exporter** sous la forme d'un fichier CSV le satellite pivot choisi pour chaque instant.
+
+Le projet devra être **importable facilement** à partir d'une commande "**pip**".

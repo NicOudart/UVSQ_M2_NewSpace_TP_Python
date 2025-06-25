@@ -101,6 +101,12 @@ Un programme commenté est plus simple à maintenir et à partager.
 
 Si vous n'avez pas compris certains passages de ce code, vous trouverez ci-dessous quelques rappels de Python dont vous aurez besoin pour votre projet.
 
+Si vous êtes à l'aise en Python, et que vous avez tout compris du code ci-dessus, vous pouvez directement passer à la partie suivante.
+
+## Les types
+
+
+
 ## Les fonctions
 
 Il est courant en programmation de ranger un groupe d'instructions sous la forme de "**fonctions**".
@@ -162,13 +168,94 @@ En Python comme dans d'autres langages de programmation, il est parfois pratique
 
 On peut voir un conteneur comme un classeur, dans lequel on vient ranger des informations, avec différents systèmes de rangement.
 
+Dans ce tutoriel, nous utilisons 2 types de conteneurs natifs Python : les **listes** et les **dictionnaires**.
 
+Les listes comme les dictionnaires peuvent contenir n'importe quel type d'objet Python, mais classés de manière différente.
 
-## Les types
+### Listes
+
+Une liste range les objets **dans un certain ordre** : on associe à chaque objet un **index**.
+
+Une liste est définie à l'aide de "[ ]".
+
+On peut par exemple définir une liste de la manière suivante :
+
+~~~
+nom_de_la_liste = [59,'Lille',34.8]
+~~~
+
+Pour récupérer le 2ème élément de la liste dans une variable, on utilise la commande :
+
+~~~
+variable = nom_de_la_liste[1]
+~~~
+
+Pour modifier le 3ème élément de la liste, on utilise la commande :
+
+~~~
+nom_de_la_liste[2] = 'Toulouse'
+~~~
+
+Et oui, les indices d'une liste vont de 0 à la taille de la liste - 1.
+Il est d'ailleurs possible de récupérer la taille de la liste avec la commande suivante :
+
+~~~
+len(nom_de_la_liste)
+~~~
+
+On peut également initialiser une liste vide, et y ajouter des éléments petit à petit de la manière suivante :
+
+~~~
+nom_de_la_liste = []
+nom_de_la_liste += [59]
+nom_de_la_liste += ['Lille']
+nom_de_la_liste += [34.8]
+~~~
+
+Ceci est possible car le "+" pour une liste n'est pas l'opérateur "addition" mais "concaténer".
+
+Attention, n'oubliez pas que pour une liste, l'ordre de concaténation compte : le "+" n'est pas symétrique !
+
+### Dictionnaires
+
+Un dictionnaire associe à chaque objet une **clé** : un string qui sert "d'étiquette" pour retrouver l'objet.
+
+Un dictionnaire est défini à l'aide de "{ }".
+
+On peut par exemple définir un dictionnaire de la manière suivante :
+
+~~~
+nom_du_dictionnaire = {'departement': 59, 'ville': 'Lille', 'surface': 34.8}
+~~~
+
+Pour récupérer l'élément associé à la clé "departement" dans une variable, on utilise la commande :
+
+~~~
+variable = nom_du_dictionnaire['departement']
+~~~
+
+Pour modifier l'élément associé à la clé "ville", on utilise la commande :
+
+~~~
+nom_du_dictionnaire['ville'] = 'Toulouse'
+~~~
+
+On peut également initialiser un dictionnaire vide, et y ajouter des éléments petit à petit de la manière suivante :
+
+~~~
+nom_du_dictionnaire = {}
+nom_du_dictionnaire['departement'] = 59
+nom_du_dictionnaire['ville'] = 'Lille'
+nom_du_dictionnaire['surface'] = 34.8
+~~~
+
+Pour un dictionnaire, l'ordre d'ajout des éléments n'a pas d'importance.
 
 ## Ouvrir et lire un fichier
 
-## Les boucles
+## Boucles et conditions
+
+## Les dates
 
 ## Les DataFrame Pandas
 

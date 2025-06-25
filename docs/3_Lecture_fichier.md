@@ -103,7 +103,66 @@ Si vous n'avez pas compris certains passages de ce code, vous trouverez ci-desso
 
 ## Les fonctions
 
+Il est courant en programmation de ranger un groupe d'instructions sous la forme de "**fonctions**".
+
+On peut voir une fonction comme une boîte noire qui prend des objets en entrée, et les utilise pour générer de nouveaux objets en sortie.
+
+Les entrées et les sorties peuvent être n'importe quel objet Python.
+Par contre attention, le type de ces objets n'est définit nulle part dans la fonction : il faudra bien préciser en commentaires et dans la documentation le type des entrées / sorties, pour qu'un utilisateur ne se trompe pas.
+
+En Python, on définit une fonction de la manière suivante :
+
+~~~
+def nom_de_la_fonction(entree_1,entree_2,entree_3,...):
+
+	...
+
+	return sortie_1,sortie_2,sortie_3,...
+~~~
+
+**Faites bien attention à ce que le contenu de la fonction soit indenté !**
+Le ":", les indentations et le "return" sont les indicateurs qui permettent à Python de comprendre où commence la fonction, quelles sont les instructions de la fonction, et où fini la fonction.
+
+Pour appeler cette fonction avec des entrées données, et en récupérer les sorties, il suffira de taper la commande suivante :
+
+~~~
+sortie_1,sortie_2,sortie_3,... = nom_de_la_fonction(entree_1,entree_2,entree_3,...)
+~~~
+
+Il est conseillé de mettre comme entrées de la fonction tous les paramètres que l'on pourra vouloir faire varier d'une application de la fonction à une autre, quitte à leur donner des valeurs par défaut.
+
+En Python, pour donner une valeur par défaut de 31 à la 3ème entrée d'une fonction, il suffit par exemple d'écrire :
+
+~~~
+def nom_de_la_fonction(entree_1,entree_2,entree_3=31,...):
+
+	...
+
+	return sortie_1,sortie_2,sortie_3,...
+~~~
+
+On peut alors appeler la fonction sans la 3ème entrée, qui prendra alors la valeur 31.
+
+Attention, lorsqu'un objet est mis en entrée d'une fonction, et que cette fonction réalise des opération sur l'objet, il restera inchangé.
+En effet, la fonction ne travaille pas directement sur les entrées, mais sur une copie de ces entrées : des "**variables locales**".
+
+Pour qu'une fonction modifie un objet, il faut utiliser l'instruction "global", pour indiquer à la fonction qu'il s'agit d'une "**variable globale**".
+
+Par exemple :
+
+~~~
+global nom_de_la_variable = 10
+~~~
+
+Comprenez-vous à présent ce que prend la fonction "read" en entrée et en sortie ?
+
 ## Les listes et les dictionnaires
+
+En Python comme dans d'autres langages de programmation, il est parfois pratique de pouvoir ranger des données dans des "**conteneurs**".
+
+On peut voir un conteneur comme un classeur, dans lequel on vient ranger des informations, avec différents systèmes de rangement.
+
+
 
 ## Les types
 

@@ -105,7 +105,33 @@ Si vous êtes à l'aise en Python, et que vous avez tout compris du code ci-dess
 
 ## Les types
 
+Les objets que l'on manipule en Python peuvent avoir **différents types**.
 
+Voici les types d'objets "natifs" (toujours présents) en Python :
+
+- **Integer** (int) : nombre entier positif ou négatif.
+
+- **Float** (float) : nombre réel représenté en "point flottant".
+
+- **Complex** (complex) : nombre complexe, avec une représentation du type "3+1j" avec "j" la racine de -1.
+
+- **String** (str) : une chaine de charactères, définie entre guillemets.
+
+- **Boolean** (bool) : "True" ou "False", utiles pour des opérations d'algèbre booléenne.
+
+- Les conteneurs : **Listes**, **dictionnaires**, **sets** et **tuples** permettent de ranger de différentes manières d'autres objets. 
+Nous verrons en détails dans ce tutoriel les listes et les dictionnaires.
+Il est à noter qu'un string est théoriquement un conteneur.
+
+Le "typage" (la définition du type d'un objet à sa création) est automatique en Python.
+C'est bien pratique, mais cela peut être source d'erreurs.
+**Faites-y attention !**
+
+Il est possible de convertir un objet d'un type en autre, avec les fonctions natives : "int()", "float()", "complex()", "str()" ou "bool()".
+
+Essayez de comprendre quel est le type de chaque objet utilisé dans notre fonction. 
+Repérez les conversions d'un type à un autre, et essayez de deviner leur utilité.
+Certaines seront plus claires dans la suite de cette partie.
 
 ## Les fonctions
 
@@ -216,6 +242,14 @@ Ceci est possible car le "+" pour une liste n'est pas l'opérateur "addition" ma
 
 Attention, n'oubliez pas que pour une liste, l'ordre de concaténation compte : le "+" n'est pas symétrique !
 
+Enfin, on peut récupérer un morceau d'une liste, en utilisant le caractère ":".
+
+Par exemple, pour récupérer les éléments de l'indice 1 à l'indice 3 d'une liste, on écrit :
+
+~~~
+nom_de_la_liste[1:3]
+~~~
+
 ### Dictionnaires
 
 Un dictionnaire associe à chaque objet une **clé** : un string qui sert "d'étiquette" pour retrouver l'objet.
@@ -252,6 +286,53 @@ nom_du_dictionnaire['surface'] = 34.8
 Pour un dictionnaire, l'ordre d'ajout des éléments n'a pas d'importance.
 
 ## Ouvrir et lire un fichier
+
+Pour **ouvrir un fichier** avec Python, on peut utiliser la fonction native "**open()**".
+
+Cette fonction prend 2 entrées : le chemin du fichier sur l'ordinateur, et le mode d'ouverture.
+
+Le mode d'ouverture est indiqué par une des 4 chaines de caractères suivantes :
+
+- "r" : mode lecture, retourant une erreur si le fichier n'existe pas.
+
+- "a" : mode ajout, ajoutant du contenu en fin de fichier, et créant le fichier s'il n'existe pas.
+
+- "w" : mode écriture, créant le fichier s'il n'existe pas.
+
+- "x" : mode création, retournant une erreur si le fichier existe déjà.
+
+On peut également écrire "r+" pour ouvrir un fichier en mode lecture **et** écriture.
+
+Si le fichier à ouvrir est en binaire, il faut ajouter un "b" au mode.
+
+Comprenez-vous alors cette ligne de code de notre fonction ?
+
+~~~
+file = open(file_path,'r')
+~~~
+
+Une fois le fichier ouvert, on peut le lire ligne par ligne avec la fonction "readline()" : 
+
+~~~
+line = file.readline()
+~~~
+
+Si l'on appelle une 1ère fois la fonction, on récupère la 1ère ligne. 
+Si on l'appelle une 2nde fois, on récupère la 2ème ligne.
+Et ainsi de suite.
+
+La variable "line" contient alors une chaine de caractères, dont on peut récupérer les éléments de la même manière que pour une liste.
+Par exemple :
+
+~~~
+caractere = line[45]
+~~~
+
+Il est également possible de récupérer toutes les lignes sous la forme d'une liste, avec :
+
+~~~
+lines = file.readlines()
+~~~
 
 ## Boucles et conditions
 

@@ -334,9 +334,119 @@ Il est également possible de récupérer toutes les lignes sous la forme d'une 
 lines = file.readlines()
 ~~~
 
+On peut alors récupérer une ligne avec :
+
+~~~
+line = file.readline()
+~~~
+
 ## Boucles et conditions
 
+### For et While
+
+Lorsque l'on veut **itérer sur une suite d'opérations**, plutôt que d'écrire toutes les opérations on peut utiliser **une boucle**.
+
+En Python, il existe 2 grands types de boucles : les boucles "For" et les boucles "While".
+
+- Si le **nombre d'itérations** nécessaires pour réaliser la tâche souhaitée est **connu**, on utilisera une boucle **For**.
+
+- Si le **nombre d'itérations** nécessaires pour réaliser la tâche souhaitée est **inconnu**, on utilisera une boucle **While**.
+
+Si on veut réaliser des itérations sur un variable "i", entre des entiers "it_start" et "it_stop", avec un pas "it_step", on écrit :
+
+~~~
+for i in range(it_start,it_stop_it,it_step):
+
+	...
+~~~
+
+**Attention, il ne faut pas oublier de mettre une indentation devant les instructions de la boucle For !**
+La fin des indentations est ce qui permet à Python de comprendre que l'on sort de la boucle.
+
+On peut aussi itérer sur les éléments d'un conteneur :
+
+~~~
+for element in conteneur:
+
+	...
+~~~
+
+Si on veut réaliser une suite d'opérations tant qu'une condition est respectée, on écrit :
+
+~~~
+While condition:
+
+	...
+~~~
+
+Une condition peut par exemple être "i<10" si on veut itérer tant que "i" est inférieur à 10.
+
+**Une fois de plus, il ne faut pas oublier de mettre une indentation devant les instructions de la boucle While !**
+
+Le risque lorsque l'on utilise une boucle While est que la condition d'arrêt ne soit jamais respectée : la boucle tourne alors à l'infini.
+**Assurez-vous que votre boucle While finira bienpar s'arrêter !**
+
+Regardez quelles boucles sont utilisées par notre fonction "read".
+Pourquoi avons-nous choisi ce type de boucle ici ?
+
+### If et Else
+
+Parfois, on peut vouloir réaliser des instructions uniquement **quand des conditions sont respectées**.
+
+Dans ces cas-là, on utilise en Python les instructions "If", "Elif" et "Else" : 
+
+- **If** : instructions à réaliser si la 1ère (ou unique) condition est vérifiée.
+
+- **Elif** : instructions à réaliser si cette condition est respectée et que les conditions précédentes ne l'étaient pas.
+
+- **Else** : instructions à réaliser si aucune des autres consitions n'est respectée.
+
+Voici un exemple de structure :
+
+~~~
+if condition_1:
+	
+	...
+	
+elif condition_2:
+
+	...
+	
+elif condition_3:
+
+	...
+	
+else:
+
+	...
+~~~
+
+**Encore une fois, il ne faut pas oublier de mettre une indentation devant les instructions après un If, Elif ou Else.**
+
+Il y a quelques "If" dans notre fonction "read".
+Essayez de comprendre à quoi ils servent.
+
 ## Les dates
+
+Beaucoup de données que vous serez amenés à manipuler seront **datées**.
+C'est le cas des observations GPS contenues dans un fichier Rinex.
+
+La **manipulation** de dates (ranger dans l'ordre chronologique, additions, soustractions, utilisation pour un axe d'une figure, etc.) n'est pas simple et nécessite des fonctions particulières.
+
+C'est pourquoi il existe une **bibliothèque "datetime"**, qui permet de manipuler des **objets "datetime"**, qui facilitent la manipulation des dates.
+
+Datetime est en général déjà contenue dans Python.
+Vous pouvez importer le package "datetime" de la bibliothèque "datetime" avec la commande suivante :
+
+~~~
+from datetime import datetime
+~~~
+
+On peut définir un objet "datetime" correspondant à une date jour/mois/annee heure:minute:seconde (int/int/int int/int/float) avec la commande :
+
+~~~
+date = datetime(annee,mois,jour,heure,minute,seconde)
+~~~
 
 ## Les DataFrame Pandas
 

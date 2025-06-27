@@ -442,11 +442,35 @@ Vous pouvez importer le package "datetime" de la bibliothèque "datetime" avec l
 from datetime import datetime
 ~~~
 
-On peut définir un objet "datetime" correspondant à une date jour/mois/annee heure:minute:seconde (int/int/int int/int/float) avec la commande :
+On peut définir un objet "datetime" correspondant à une date jour/mois/annee heure:minute:seconde avec la commande :
 
 ~~~
 date = datetime(annee,mois,jour,heure,minute,seconde)
 ~~~
 
+Datetime utilise le calendrier Grégorien, considère qu'il y a 86400 secondes dans une journée.
+
+Comme nous le verrons plus tard dans ce tutoriel, une liste de datetimes peut être utilisée comme axe d'une figure Matplotlib.
+
+Pour calculer la somme ou la différence entre 2 intervalles de temps, la bibliothèque datetime contient aussi des objets "**timedelta**", importable comme suit :
+
+~~~
+from datetime import timedelta
+~~~
+
+On peut alors initialiser un timedelta en donnant un intervalle de temps en jours, heures, minutes, secondes, millisecondes, avec une commande du type :
+
+~~~
+dT = timedelta(days=...,hours=...,minutes=...,seconds=...,milliseconds=...)
+~~~
+
+Pour additionner, soustraire 2 timedeltas, il suffit d'utiliser les opérateurs "+" et "-".
+
+Essayez de comprendre comment sont utilisés les objets "datetime" dans la fonction "read".
+
 ## Les DataFrame Pandas
+
+En **analyse de données** avec Python, on utilise souvent la bibliothèque "**Pandas**".
+
+Cette bibliothèque propose notamment un nouveau type de conteneur appelé "**DataFrame**", ainsi que des outils d'analyses qui vont avec.
 

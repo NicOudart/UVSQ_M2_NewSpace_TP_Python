@@ -470,7 +470,48 @@ Essayez de comprendre comment sont utilisés les objets "datetime" dans la fonct
 
 ## Les DataFrame Pandas
 
-En **analyse de données** avec Python, on utilise souvent la bibliothèque "**Pandas**".
+En **analyse de données** avec Python, on utilise souvent la bibliothèque "**Pandas**", importable avec :
+
+~~~
+import pandas as pd 
+~~~
+
+(Si vous n'avez pas cette bibliothèque d'installée sur votre version de Python, utilisez la commande "pip install pandas".
 
 Cette bibliothèque propose notamment un nouveau type de conteneur appelé "**DataFrame**", ainsi que des outils d'analyses qui vont avec.
 
+|Pandas DataFrame|
+|:-|
+|Un DataFrame Pandas est un tableau 2D, de taille modifiable, pouvant contenir des objets de plusieurs types différents.|
+|Il est constitué de :|
+|- "Columns" : colonnes ayant chacune un label.|
+|- "Index" : lignes ayant chacune un numéro, ou un index s'il est fourni.|
+
+On peut construire un DataFrame **à partir d'un dictionnaire** et de la fonction "pd.DataFrame()", chaque clé correspondant à un label de colonne.
+
+Par exemple si on écrit les commandes :
+
+~~~
+dic_sat_data = {'epoch': [1,2,3], 'sat': ['G01','G02','G03'] 's1c': [45,46,49]}
+df_sat_data = pd.DataFrame(dic_sat_data)
+~~~
+
+On obtient le DataFrame suivant :
+
+|index|epoch|sat  |s1c|
+|:---:|:---:|:---:|:-:|
+|0    |1    |'G01'|45 |
+|1    |2    |'G02'|46 |
+|2    |3    |'G03'|49 |
+
+Essayez de comprendre la structure du DataFrame obtenu en sortie de notre fonction "read()".
+
+Les DataFrames Pandas sont très pratiques pour manipuler des gros ensembles de données et réaliser des affichages.
+Ils peuvent aussi mis directement en entrée de certains outils de Machine-Learning.
+
+Nous verrons dans la suite de ce tutoriel quelques manipulations de base de ce type de conteneur.
+
+---
+
+Nous avons à présent dans notre projet une fonction permettant d'importer les données S1C à partir d'un fichier Rinex.
+Dans la partie suivante, nous allons coder une fonction pour manipuler ces données, afin d'obtenir la sortie dont nous avons besoin : notre choix de satellite pivot à chaque instant.

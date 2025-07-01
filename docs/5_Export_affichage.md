@@ -73,7 +73,7 @@ def export(df_pivot,file_path,file_name):
     for idx in range(len(df_pivot)):
         
         #Write a line containing a date / pivot satellite number couple:
-        file.write(str(df_pivot['date'].loc[idx])+','+str(df_pivot['pivot'].loc[idx])+'\n')
+        file.write(str(df_pivot['date'].loc[idx])+','+str(df_pivot['sat'].loc[idx])+'\n')
     
     #Close the CSV file:
     file.close()

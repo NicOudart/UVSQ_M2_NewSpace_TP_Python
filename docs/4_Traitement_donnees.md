@@ -48,7 +48,7 @@ def pivot(df_sat_data):
         
         #Add at the right index in the pivot DataFrame the date / satellite
         #corresponding to the highest S1C:
-        df_pivot.loc[epoch] = df_sat_epoch[['date','sat']].loc[df_sat_epoch['s1c'].idxmax()]
+        df_pivot.loc[epoch-1] = df_sat_epoch[['date','sat']].loc[df_sat_epoch['s1c'].idxmax()]
             
     return df_pivot
 ~~~

@@ -10,7 +10,7 @@ Nous allons maintenant voir comment écrire une fonction pour **afficher**, et u
 ###############################################################################
 #HEADER
 
-#This short function returns a figure of the GPS satellite number of the 
+#This short function returns a figure showing the GPS satellite number of the 
 #selected pivot, as a function of time.
 
 #Inputs:
@@ -36,5 +36,45 @@ def display(df_pivot):
 ## Compléter function_export.py
 
 ~~~
+###############################################################################
+#HEADER
 
+#This function writes a CSV file containing the GPS satellite number of the
+#selected pivot, as a function of time. The path of and name of the CSV file is 
+#defined by the user.
+
+#Inputs:
+#   -df_pivot: Pandas DataFrame as returned by the "pivot" function.
+#   -file_path: path of the directory where the CSV file will be saved.
+#   -file_name: name of the CSV file to be saved.
+    
+#Outputs:
+#   -None.
+    
+#Author: Arthur DENT
+
+###############################################################################
+
+#Libraries importation:---------------------------------------------------------
+
+import os
+
+#Function definition:----------------------------------------------------------
+
+def export(df_pivot,file_path,file_name):
+    
+    #Open the CSV file at the given path, with the given name:
+    file = open(os.path.join(file_path,file_name+'.csv'),'w')
+    
+    #Write the header, containing the columns names:
+    file.write('date,pivot\n')
+    
+    #Iterate on the rows of the Pandas DataFrame:
+    for idx in range(len(df_pivot)):
+        
+        #Write a line containing a date / pivot satellite number couple:
+        file.write(str(df_pivot['date'].loc[idx])+','+str(df_pivot['pivot'].loc[idx])+'\n')
+    
+    #Close the CSV file:
+    file.close()
 ~~~

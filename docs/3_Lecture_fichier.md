@@ -87,6 +87,9 @@ def read(file_path):
         
         #Read the next line:
         line = file.readline()
+		
+	#Close the Rinex file:
+    file.close()
     
     #Convert the dictionnary to a Pandas DataFrame object:
     df_sat_data = pd.DataFrame(dic_sat_data)
@@ -338,6 +341,13 @@ On peut alors récupérer une ligne avec :
 
 ~~~
 line = file.readline()
+~~~
+
+**Attention ! Il ne faut pas oublier de fermer un fichier qu'on a ouvert !**
+Il faut alors utiliser la commande :
+
+~~~
+file.close()
 ~~~
 
 ## Boucles et conditions

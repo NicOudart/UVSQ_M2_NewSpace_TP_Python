@@ -266,3 +266,5 @@ Ce programme s'executera à l'installation de votre projet.
 
 Vous avez à présent la structure de base de votre projet !
 Dans la suite, nous allons voir comment remplir les fichiers que nous avons laissés vides.
+
+Il est à noter que par soucis de pédagogie, **nous ne coderons pas nécessairement les fonctions de la manière la plus efficace**.

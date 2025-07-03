@@ -201,5 +201,5 @@ Vous devriez à présent comprendre ce que fait notre fonction "export".
 
 ---
 
-Nous avons à présent dans notre projet une fonction permettant de choisir un satellite pivot pour chaque instant.
-Dans la partie suivante, nous allons coder des fonctions pour réaliser un affichage de ces données, et les exporter au format CSV.
+Nous avons à présent dans notre projet des fonctions permettant d'afficher des graphiques de nos données, et de les exporter au format CSV.
+Dans la partie suivante, nous allons écrire des scripts d'exemple et de test de notre projet.

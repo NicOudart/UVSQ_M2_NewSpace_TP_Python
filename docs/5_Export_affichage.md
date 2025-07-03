@@ -58,6 +58,10 @@ df.plot(kind='...',x='...',y='...',title='...',xlabel='...',ylabel='...')
 
 A partir de ces informations, essayez de comprendre notre fonction "display".
 
+Voici ce que cette fonction donnera une fois appliquée à notre fichier exemple de la station GODS :
+
+![Figure exemple](img/Figure_pivot.png)
+
 Voici une petite liste des types d'affichages graphiques possibles avec Pandas :
 
 - "line" : une courbe classique, c'est le mode par défaut.

@@ -173,3 +173,33 @@ Si vous savez déjà écrire un fichier avec Python, et que vous avez tout compr
 
 ## Export de données en fichier CSV
 
+Nous avons vu précédemment comment ouvrir fichier avec la fonction Python "open", et le lire ligne à ligne avec la fonction "readline".
+
+Une fois un fichier ouvert en mode écriture :
+
+~~~
+file = open(file_path,'r')
+~~~
+
+on peut aussi écrire dedans avec la fonction Python "**write**" :
+
+~~~
+file.write('...')
+~~~
+
+qui prend en entrée la chaîne de caractère à écrire dans le fichier.
+
+Pour passer une ligne, il faut ajouter '\n' à la fin de la chaîne de caractères.
+
+Comme expliqué précédemment, il ne faut pas oublier de fermer le fichier après utilisation :
+
+~~~
+file.close()
+~~~
+
+Vous devriez à présent comprendre ce que fait notre fonction "export".
+
+---
+
+Nous avons à présent dans notre projet une fonction permettant de choisir un satellite pivot pour chaque instant.
+Dans la partie suivante, nous allons coder des fonctions pour réaliser un affichage de ces données, et les exporter au format CSV.

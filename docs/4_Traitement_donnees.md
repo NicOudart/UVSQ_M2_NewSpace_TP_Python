@@ -61,6 +61,8 @@ Si vous connaissez déjà bien Pandas, et que vous avez tout compris du code ci-
 
 ## Sélection de données dans un DataFrame
 
+Voici quelques façons de manipuler des DataFrames qui vous seront utiles pour votre projet.
+
 Tout d'abord, on peut initialiser un DataFrame vide, en ne donnant que le nom des colonnes :
 
 ~~~
@@ -119,3 +121,8 @@ Il existe des méthodes associées aux DataFrame qui permettent de récupérer d
 Et beaucoup d'autres !
 
 Avec tous ces éléments, essayez de comprendre les manipulations de DataFrames réalisées par notre fonction "pivot".
+
+---
+
+Nous avons à présent dans notre projet une fonction permettant de choisir un satellite pivot pour chaque instant.
+Dans la partie suivante, nous allons coder des fonctions pour réaliser un affichage de ces données, et les exporter au format CSV.

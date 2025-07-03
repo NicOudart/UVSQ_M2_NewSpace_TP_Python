@@ -6,6 +6,10 @@ Nous allons maintenant voir comment écrire une fonction pour **afficher**, et u
 
 ## Compléter function_display.py
 
+Ouvrez le fichier "function_display.py" de votre projet.
+
+Complétez-la avec le code suivant :
+
 ~~~
 ###############################################################################
 #HEADER
@@ -33,7 +37,52 @@ def display(df_pivot):
     return fig_pivot
 ~~~
 
+Cette fonction réalise un affichage en nuage de points ("scatter plot") des satellites GPS sélectionnés comme pivots en fonction du temps.
+
+Nous allons voir dans la suite comment utiliser la méthode "plot" des DataFrames Pandas afin de réaliser des affichages graphiques.
+
+Si vous connaissez déjà bien Pandas, et que vous avez tout compris du code ci-dessus, vous pouvez directement passer à la section suivante.
+
+## Affichages à partir d'un DataFrame
+
+Les DataFrames Pandas ont une méthode associée "**plot()**", qui fait appel à la bibliothèque **Matplotlib** pour facilement réaliser des affichages graphiques.
+
+On donne en entrée de la méthode le type d'affichage à réaliser (dans notre cas un nuage de points), les colonnes du DataFrame à utiliser pour les différents axes x et y, et les labels.
+D'autres paramètres de mise en forme de la figure sont possibles (dans notre cas la couleur des points, l'ajout d'une grille en fond, la position des labels sur l'axe des y).
+
+Ce qui donne une commande du type :
+
+~~~
+df.plot(kind='...',x='...',y='...',title='...',xlabel='...',ylabel='...')
+~~~
+
+A partir de ces informations, essayez de comprendre notre fonction "display".
+
+Voici une petite liste des types d'affichages graphiques possibles avec Pandas :
+
+- "line" : une courbe classique, c'est le mode par défaut.
+
+- "bar" : un diagramme en barres.
+
+- "hist" : un histogramme.
+
+- "box" : une boîte à moustaches.
+
+- "kde" : "Kernel Density Estimation".
+
+- "area" : un graphique en aires.
+
+- "pie" : un camembert.
+
+- "scatter" : un nuage de points.
+
+A vous de choisir le type d'affichage le plus pertinent pour votre projet !
+
 ## Compléter function_export.py
+
+Ouvrez le fichier "function_export.py" de votre projet.
+
+Complétez-la avec le code suivant :
 
 ~~~
 ###############################################################################
@@ -78,3 +127,49 @@ def export(df_pivot,file_path,file_name):
     #Close the CSV file:
     file.close()
 ~~~
+
+Cette fonction permet d'exporter le DataFrame contenant le satellite GPS choisi comme pivot en fonction du temps sous la forme d'un **fichier CSV**.
+
+|Définition du format CSV|
+|:-|
+|Ce sont les initiales de "Comma Separated Values".|
+|Il s'agit d'un format d'encodage de données sous la forme d'un **tableau**, dans un fichier texte.|
+|Comme son nom l'indique, chaque ligne représentera une ligne du tableau, dont les éléments pour chaque colonne seront **séparés par une virgule**.|
+|La 1ère ligne correspond en général aux labels des colonnes.|
+|La fin d'une ligne est en général marquée par le caractère de retour à la ligne '\n'.|
+
+Par exemple, le CSV suivant :
+
+~~~
+date,pivot
+2024-05-04 00:00:00,15
+2024-05-04 00:00:30,15
+2024-05-04 00:01:00,15
+~~~
+
+donnera le tableau :
+
+|date               |pivot|
+|:-----------------:|:---:|
+|2024-05-04 00:00:00|15   |
+|2024-05-04 00:00:30|15   |
+|2024-05-04 00:01:00|15   |
+
+Le format CSV est un classique en analyse de données.
+Il est lisible par de nombreux logiciels (dont Office Excel et OpenOffice Calc), et importable sous la forme d'un DataFrame avec Pandas avec la méthode :
+
+~~~
+df = pd.read_csv('...')
+~~~
+
+qui prend en entrée le chemin du fichier à importer.
+
+Nous allons voir dans la suite comment écrire un fichier CSV avec Python.
+
+Il est à noter que les DataFrames Pandas ont une méthode associée "to_csv()", qui permet en une ligne d'exporter un DataFrame en un fichier CSV.
+Nous avons re-codé l'export ici dans le seul but de vous faire découvrir la méthode "write", qui est applicable à d'autres types de fichiers que les CSV.
+
+Si vous savez déjà écrire un fichier avec Python, et que vous avez tout compris du code ci-dessus, vous pouvez directement passer à la partie suivante.
+
+## Export de données en fichier CSV
+

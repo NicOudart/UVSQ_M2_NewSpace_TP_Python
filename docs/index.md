@@ -76,6 +76,8 @@ Votre projet devra contenir au minimum :
 
 - Une documentation Markdown décrivant votre projet et le fonctionnement de vos fonctions.
 
+Vos codes Python **devront être commentés**.
+
 Vous devrez rendre votre **projet Python complet** en fin de séance, **compressé en format zip**.
 
 Vous pouvez réaliser votre projet par binôme ou trinôme, **à condition d'indiquer dans le README le travail réalisé par chacun sur le projet**.

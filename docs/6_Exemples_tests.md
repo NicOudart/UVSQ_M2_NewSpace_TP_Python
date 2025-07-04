@@ -88,14 +88,64 @@ On peut néanmoins définir des paramètres d'entrée modifiables en début de s
 Pour cela, il faut impérativement que le script soit **bien commenté !**
 L'utilisateur doit pouvoir le lire comme un tutoriel.
 
-## Compléter PyS1C_example.py
+## Compléter PyS1C_unit_test.py
+
+Ouvrez le fichier "PyS1C_unit_test.py" de votre projet.
+
+Complétez-la avec le code suivant :
+
+~~~
+###############################################################################
+#HEADER
+
+#This script automatize unit tests for functions "read" and "pivot" of PyS1C.
+#Tests are performed on the example Rinex file provided along with this project 
+#(station GODS - 04/05/2024).
+
+#Author: Arthur DENT
+
+###############################################################################
+
+#Libraries importation:--------------------------------------------------------
+import os
+import PyS1C
+
+#Input directory:--------------------------------------------------------------
+
+#Define the path of the input Rinex file:
+input_path = os.path.join(os.path.dirname(__file__),'GODS00USA_R_20241250000_01D_30S_MO.rnx')
+
+#Unit tests script:------------------------------------------------------------
+
+#Check the "read" function:
+df_sat_data = PyS1C.read(input_path)
+assert list(df_sat_data.columns.values)==['date', 'epoch', 'sat', 's1c'], 'PyS1C.read: Wrong DataFrame columns!'
+assert len(df_sat_data)==29047, 'PyS1C.read: Wrong number of lines in the DataFrame!'
+assert str(df_sat_data['date'].loc[0])=='2024-05-04 00:00:00' and str(df_sat_data['date'].loc[29046])=='2024-05-04 23:59:30', 'PyS1C.read: Wrong time period in the DataFrame'
+assert df_sat_data['epoch'].max()==2880, 'PyS1C.read: Wrong number of epochs!'
+assert df_sat_data['sat'].max()<=32 and df_sat_data['sat'].min()>=1, 'PyS1C.read: Invalid GPS satellite number!'
+assert round(df_sat_data['s1c'].mean(),5)==43.20223, 'PyS1C.read: Problem with the S1C values!'
+print('PyS1C.read: checked!')
+
+#Check the "pivot" function:
+df_pivot = PyS1C.pivot(df_sat_data)
+assert list(df_pivot.columns.values)==['date', 'sat'], 'PyS1C.pivot: Wrong DataFrame columns!'
+assert len(df_pivot)==2880, 'PyS1C.pivot: Wrong number of lines in the DataFrame!'
+assert str(df_pivot['date'].loc[0])=='2024-05-04 00:00:00' and str(df_pivot['date'].loc[2879])=='2024-05-04 23:59:30', 'PyS1C.pivot: Wrong time period in the DataFrame'
+assert df_pivot['sat'].max()<=32 and df_pivot['sat'].min()>=1, 'PyS1C.pivot: Invalid GPS satellite number!'
+assert round(df_pivot['sat'].mean(),5)==14.32083, 'PyS1C.pivot: Problem with the pivot numbers!'
+print('PyS1C.pivot: checked!')
+~~~
+
+Comme vous pouvez le voir, ces tests sont basés sur la méthode "assert" de Python.
+Voyons comment réaliser des tests sous Python, et comment fonctionne cette méthode "assert".
 
 ## Les tests unitaires
 
 Il est important de pouvoir vérifier en un seul clic qu'**une modification de notre projet n'entrainera pas des bugs**.
 D'où l'intérêt d'écrire des scripts de tests, afin d'**automatiser** cette vérification.
 
-Comme nous l'avons expliqué plus tôt lors de ce tutoriel, nous n'implémenterons ici que des **tests unitaires**.
+Comme nous l'avons expliqué plus tôt lors de ce tutoriel, nous n'implémenterons ici que des **tests unitaires**, et uniquement ceux des fonctions de lecture ("read") et de traitement ("pivot").
 C'est aussi ce qui sera attendu de vous pour votre projet évalué.
 
 S'il bien entendu impossible d'être complètement exhaustifs dans nos tests, l'idée est d'anticiper le maximum de bugs possibles, en réalisant des **tests représentatifs des cas d'utilisations** de votre projet.
@@ -136,3 +186,8 @@ Si la fonction ne retourne pas la valeur attendue, le message "test_func NOK" s'
 
 Essayez à présent de comprendre les test qui sont réalisés par notre script de tests.
 Avez-vous des idées d'autres tests qui pourraient être réalisés ?
+
+---
+
+Nous avons à présent dans notre projet des scripts d'exemple et de test, appliquant notre projet à l'exemple concret de la station GODS.
+Dans la dernière partie de ce tutoriel, nous allons écrire une documentation en Markdown pour notre projet.

@@ -72,7 +72,7 @@ Votre projet devra contenir au minimum :
 
 - Un script d'exemple utilisant ces fonctions.
 
-- Un script de tests unitaires de ces fonctions.
+- Un script de tests unitaires des fonctions de lecture et de traitement.
 
 - Une documentation Markdown décrivant votre projet et le fonctionnement de vos fonctions.
 

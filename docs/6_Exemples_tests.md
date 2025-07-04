@@ -137,6 +137,13 @@ assert round(df_pivot['sat'].mean(),5)==14.32083, 'PyS1C.pivot: Problem with the
 print('PyS1C.pivot: checked!')
 ~~~
 
+Si vous faites tourner ce script, et que vous n'avez fait aucune erreur de programmation, vous devriez voir s'afficher sur la console Python :
+
+~~~
+PyS1C.read: checked!
+PyS1C.pivot: checked!
+~~~
+
 Comme vous pouvez le voir, ces tests sont basés sur la méthode "assert" de Python.
 Voyons comment réaliser des tests sous Python, et comment fonctionne cette méthode "assert".
 
@@ -171,7 +178,7 @@ except ValueError:
 	print('Error detected!')
 ~~~
 
-L'idée est que le programme essaye de faire tourner les lignes de codes dans le "try", et que si une erreur "ValueError" est 
+L'idée est que le programme essaye de faire tourner les lignes de codes dans le "try", et que si une erreur "ValueError" est détectée, le message d'erreur "Error detected!" s'affiche dans la console grâce à la fonction "**print**".
 
 Enfin, comme pour notre projet, vous pouvez utiliser la méthode "**assert**" afin de vérifier que la fonction renvoit bien la sortie à laquelle vous vous attendez.
 Dans le cas contraire, la méthode affichera un message d'erreur.

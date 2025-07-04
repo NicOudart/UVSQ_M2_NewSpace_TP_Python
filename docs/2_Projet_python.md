@@ -1,4 +1,4 @@
-# Etape 1 : Structurer un projet Python
+# Etape 2 : Structurer un projet Python
 
 Pour commencer, nous allons voir comment structurer un **projet Python** de manière à ce qu'il soit importable / utilisable le plus simplement possible.
 

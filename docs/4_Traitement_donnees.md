@@ -1,4 +1,4 @@
-# Etape 3 : Traitement des données S1C - détermination du pivot
+# Etape 4 : Traitement des données S1C - détermination du pivot
 
 Nous allons maintenant voir comment écrire une fonction pour **manipuler les données** S1C, afin de déterminer le satellite pivot à chaque instant.
 
@@ -28,7 +28,7 @@ Complétez-la avec le code suivant :
 
 ###############################################################################
 
-#Libraries importation:---------------------------------------------------------
+#Libraries importation:--------------------------------------------------------
 
 import pandas as pd
 

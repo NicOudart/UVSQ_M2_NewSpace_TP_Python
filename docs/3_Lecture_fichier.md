@@ -1,4 +1,4 @@
-# Etape 2 : Lire les données d'un fichier
+# Etape 3 : Lire les données d'un fichier
 
 Nous allons maintenant voir comment écrire une fonction pour **extraire les données** qui nous intéressent d'un fichier Rinex.
 
@@ -28,7 +28,7 @@ Complétez-la avec le code suivant :
 
 ###############################################################################
 
-#Libraries importation:---------------------------------------------------------
+#Libraries importation:--------------------------------------------------------
 
 from datetime import datetime
 import pandas as pd

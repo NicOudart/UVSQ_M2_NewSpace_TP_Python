@@ -1,4 +1,4 @@
-# Etape 4 : Export et affichage des résultats
+# Etape 5 : Export et affichage des résultats
 
 Nous allons maintenant voir comment écrire une fonction pour **afficher**, et une fonction pour **exporter** le satellite pivot choisi au cours du temps.
 
@@ -108,7 +108,7 @@ Complétez-la avec le code suivant :
 
 ###############################################################################
 
-#Libraries importation:---------------------------------------------------------
+#Libraries importation:--------------------------------------------------------
 
 import os
 

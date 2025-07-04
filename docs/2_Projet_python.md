@@ -130,9 +130,13 @@ Vous trouverez souvent dans les tests automatiques d'un projet de programmation 
 
 Dans le cadre de ce tutoriel, nous n'implémenterons que les tests unitaires, sous la forme d'un unique script Python.
 
-Créez dans le dossier "test" un script Python vide "PyS1C_unit_test.py" :
+Créez dans le dossier "test" un script Python vide "PyS1C_unit_test.py".
+Ajoutez-y aussi le fichier Rinex qui vous a été fourni :
 
 ![Structure des tests](img/Test_structure.png)
+
+Il est à noter que, si on a ici le même fichier pour l'exemple et les tests, on peut vouloir réaliser les tests et les exemples sur des données différentes.
+Dans notre cas, nous aurions évidemment pu mettre le fichier à un seul emplacement dans notre projet.
 
 ## Readme
 

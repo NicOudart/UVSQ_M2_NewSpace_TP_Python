@@ -101,6 +101,9 @@ Essayez de comprendre ce que fait cette fonction grâce à ces commentaires.
 
 D'ailleurs, **n'oubliez pas de commenter vos propres programmes durant le projet évalué !**
 Un programme commenté est plus simple à maintenir et à partager.
+En Python, on commente avec le symbole "#".
+
+N'hésitez pas aussi à ajouter des en-têtes ("header") en commentaires de vos fichiers Python, pour expliquer à quoi ils servent, ce qu'ils prennent en entrée / donnent en sortie, qui les ont codés.
 
 Si vous n'avez pas compris certains passages de ce code, vous trouverez ci-dessous quelques rappels de Python dont vous aurez besoin pour votre projet.
 

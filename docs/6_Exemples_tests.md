@@ -62,14 +62,18 @@ Pour que ce code puisse tourner, il faut tout d'abord que PyS1C soit installé s
 Il ne faut donc pas oublier de faire tourner cette commande au préalable :
 
 ~~~
-pip install PyS1C
+pip install path_PyS1C
 ~~~
+
+en remplaçant "path_PyS1C" par le chemin de PyS1C sur votre ordinateur.
 
 Et à chaque mise à jour du projet :
 
 ~~~
-pip install PyS1C --upgrade
+pip install path_PyS1C --upgrade
 ~~~
+
+en remplaçant "path_PyS1C" par le chemin de PyS1C sur votre ordinateur.
 
 Essayez de comprendre ce que ce script fait à partir des commentaires.
 

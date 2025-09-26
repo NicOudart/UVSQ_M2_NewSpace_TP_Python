@@ -75,7 +75,7 @@ Comme son nom l'indique, il est executé automatiquement à l'initialisation du 
 
 Ce fichier peut en théorie être vide, mais on s'en sert souvent pour importer les fonctions de tous les modules du package.
 
-Pour notre tutoriel, créez un fichier "\_init_.py" dans le package "PyS1C", contenant les commandes suivantes :
+Pour notre tutoriel, créez un fichier "\__init__.py" dans le package "PyS1C", contenant les commandes suivantes :
 
 ~~~
 from .function_read import read

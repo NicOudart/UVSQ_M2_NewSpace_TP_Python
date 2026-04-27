@@ -52,13 +52,9 @@ Ce tutoriel sera divisé en plusieurs parties :
 
 ## Evaluation
 
-Voici les critères suivant lesquels votre projet sera évalué.
+Durant la séance suivant ce tutoriel, ce sera **à votre tour d'écrire un projet Python**, pour répondre à une problématique de **traitement / analyse de données** qui vous sera donnée.
 
-### Rendu de votre projet Python
-
-Durant la séance suivant ce tutoriel, ce sera **à votre tour d'écrire un projet Python**, pour répondre à une problématique de **traitement / analyse de données** de votre choix.
-
-Votre projet devra contenir au minimum :
+Votre projet devra contenir :
 
 - La structure de base d'un projet Python (src,docs,examples,test,readme,requirements,setup).
 
@@ -80,26 +76,12 @@ Vos codes Python **devront être commentés**.
 
 Vous devrez rendre votre **projet Python complet** en fin de séance, **compressé en format zip**.
 
-Vous pouvez réaliser votre projet par binôme ou trinôme, **à condition d'indiquer dans le README le travail réalisé par chacun sur le projet**.
+Il s'agira d'un **travail individuel**.
 
 |Utilisation de l'IA générative|
 |:-|
-|L'utilisation de l'IA générative lors de ce projet est autorisée, à condition de mentionner dans votre README pour quoi vous l'avez utilisée.|
-|Pour la génération de code, je pourrais venir vous demander de m'expliquer vos fonctions, pour vérifier que vous comprennez bien ce que vous faites.|
-
-### Présentation orale de votre projet
-
-Lors de la dernière séance, vous devrez faire une **présentation de 10 min** de votre projet, contenant au moins :
-
-- Une présentation rapide de la problématique à laquelle répond votre projet.
-
-- Une présentation du fonctionnement général de votre projet (ce que font vos fonctions), et de comment il répond à votre problématique.
-
-- Une démonstration de votre projet basée sur votre script d'exemple.
-
-- Une explication des tests mis en place pour valider votre projet.
-
-**Je pourrais vous poser des questions pour vérifier que vous comprenez bien ce que vous avez programmé !**
+|L'utilisation de l'IA générative lors de ce projet est interdite, à condition de mentionner dans votre README pour quoi vous l'avez utilisée.|
+|**Je pourrais venir vous demander de m'expliquer ce que vous programmez.**|
 
 ---
 

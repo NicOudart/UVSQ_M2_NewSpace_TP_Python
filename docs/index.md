@@ -1,12 +1,12 @@
-# M2 NewSpace : Traitement de données avec Python
+# M2 NewSpace : Mise en forme d'un projet Python
 
 ![Logo](img/M2NS_logo.png)
 
-_Cours conçu pour les étudiants du M2 "NewSpace" de l'Université de Versailles Saint-Quentin (UVSQ)_
+_Cours conçu pour les étudiants du M2 "NewSpace" de l'Université de Versailles Saint-Quentin (UVSQ), dans le cadre de l'UE "Traitement et analyse de données instrumentales"_
 
 ## Objectifs du cours
 
-Ce cours est une introduction au traitement de données avec Python, dans le but de vous préparer à la suite de l'UE "Analyse de données".
+Ce cours portera sur **la mise en forme d'un projet de traitement de données avec Python**, afin de vous donner les bases nécessaires à la suite de l'UE "**Traitement et analyse de données instrumentales**".
 
 L'objectif est qu'à la fin de ce cours vous soyez capables de :
 
@@ -22,7 +22,7 @@ Ce cours sera divisé en 2 temps :
 
 - Un **tutoriel** que vous trouverez sur ce site web, afin de vous former sur un exemple concret.
 
-- Un **projet évalué** lors duquel vous mettrez en application ce que vous avez appris, sur un exemple de votre choix.
+- Un **projet évalué** lors duquel vous mettrez en application ce que vous avez appris, sur un nouvel exemple.
 
 ## Tutoriel
 

@@ -97,7 +97,7 @@ def read(file_path):
     return df_sat_data
 ~~~
 
-Essayez de comprendre ce que fait cette fonction grâce à ces commentaires.
+Essayez de comprendre ce que fait cette fonction grâce à ses commentaires.
 
 D'ailleurs, **n'oubliez pas de commenter vos propres programmes durant le projet évalué !**
 Un programme commenté est plus simple à maintenir et à partager.

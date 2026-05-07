@@ -1,8 +1,13 @@
 # Etape 1 : Contexte du tutoriel
 
-Lors de ce tutoriel, nous allons créer un projet Python pour une application concrète : **la récupération et le traitement de données GNSS**.
+![En-tête TP ROXI](img/Header.png)
+
+_"Today, I am pleased to announce that the United States will stop the intentional degradation of the Global Positioning System (GPS) signals available to the public beginning at midnight tonight. We call this degradation feature Selective Availability (SA). This will mean that civilian users of GPS will be able to pinpoint locations up to ten times more accurately than they do now."_
+**White House Office of the Press Secretary, 05/01/2000 statement by the president**
 
 ---
+
+Lors de ce tutoriel, nous allons créer un projet Python pour une application concrète : **la récupération et le traitement de données GNSS**.
 
 ## GNSS et RTK
 

@@ -80,7 +80,7 @@ Il s'agira d'un **travail individuel**.
 
 |Utilisation de l'IA générative|
 |:-|
-|L'utilisation de l'IA générative lors de ce projet est interdite, à condition de mentionner dans votre README pour quoi vous l'avez utilisée.|
+|L'utilisation de l'IA générative lors de ce projet est **interdite**.|
 |**Je pourrais venir vous demander de m'expliquer ce que vous programmez.**|
 
 ---

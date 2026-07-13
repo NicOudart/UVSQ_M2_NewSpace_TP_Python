@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nicolas OUDART" /><link rel="canonical" href="https://nicoudart.github.io/UVSQ_M2_NewSpace_TP_Python/3_Lecture_fichier/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>3. Lecture du fichier - UVSQ_M2_NewSpace_TP_Python</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3. Lecture du fichier";
+        var mkdocs_page_input_path = "3_Lecture_fichier.md";
+        var mkdocs_page_url = "/UVSQ_M2_NewSpace_TP_Python/3_Lecture_fichier/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UVSQ_M2_NewSpace_TP_Python
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../1_Contexte/">1. Contexte</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../2_Projet_python/">2. Mise en forme du module Python</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">3. Lecture du fichier</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#completer-function_readpy">Compléter function_read.py</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-types">Les types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-fonctions">Les fonctions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-listes-et-les-dictionnaires">Les listes et les dictionnaires</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#listes">Listes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dictionnaires">Dictionnaires</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ouvrir-et-lire-un-fichier">Ouvrir et lire un fichier</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#boucles-et-conditions">Boucles et conditions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for-et-while">For et While</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#if-et-else">If et Else</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-dates">Les dates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-dataframe-pandas">Les DataFrame Pandas</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../4_Traitement_donnees/">4. Traitement des données</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../5_Export_affichage/">5. Export et affichage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../6_Exemples_tests/">6. Exemples et tests</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../7_Documentation/">7. Documentation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UVSQ_M2_NewSpace_TP_Python</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">3. Lecture du fichier</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="etape-3-lire-les-donnees-dun-fichier">Etape 3 : Lire les données d'un fichier</h1>
+<p>Nous allons maintenant voir comment écrire une fonction pour <strong>extraire les données</strong> qui nous intéressent d'un fichier Rinex.</p>
+<hr />
+<h2 id="completer-function_readpy">Compléter function_read.py</h2>
+<p>Ouvrez le fichier "function_read.py" de votre projet.</p>
+<p>Complétez-la avec le code suivant :</p>
+<pre><code>###############################################################################
+#HEADER
+
+#This function reads a Rinex file, and returns a Pandas DataFrame containing 4
+#columns: the observation date, the number of the epoch (time sample) since the
+#beginning of the file, the GPS satellite number, and the S1C observation.
+
+#Inputs:
+#   -file_path: path of the Rinex file
+
+#Outputs:
+#   -df_sat_data: Pandas DataFrame containing the S1C satellite observations.
+
+#Author: Arthur DENT
+
+###############################################################################
+
+#Libraries importation:--------------------------------------------------------
+
+from datetime import datetime
+import pandas as pd
+
+#Function definition:----------------------------------------------------------
+
+def read(file_path):
+
+    #Initialize a dictionnary of GPS data:
+    dic_sat_data = {'date': [], 'epoch': [], 'sat': [], 's1c': []}
+
+    #Initialize the epoch number:
+    epoch = 0
+
+    #Open the Rinex file in &quot;read&quot; mode:
+    file = open(file_path,'r')
+
+    #Read the 1st line:
+    line = file.readline()
+
+    #Skip all lines until the end of the header:
+    while 'END OF HEADER' not in line:
+
+        line = file.readline()
+
+    #Read all data lines until the end of the file:
+    while line!='':
+
+        #If the line contains a date:
+        if line[0]=='&gt;':
+
+            data_date = line.split() #Separate the date elements
+
+            date = datetime(int(data_date[1]),int(data_date[2]),int(data_date[3]),int(data_date[4]),int(data_date[5]),int(float(data_date[6]))) #Create a datetime object with this date 
+
+            epoch += 1 #Increment the epoch by 1
+
+        #If the line contains a GPS satellite data:
+        if line[0]=='G':
+
+            #Retrieve the satellite number as an integer:
+            sat = int(line[1:3])
+
+            #If the S1C information is not empty:
+            if line[45]!=' ':
+
+                #Retrieve the S1C information as a float:
+                s1c = float(line[43:49])
+
+                #Add the date, the epoch, the GPS satellite number, and the S1C
+                #to the dictionnary:
+                dic_sat_data['date'] += [date]
+                dic_sat_data['epoch'] += [epoch]
+                dic_sat_data['sat'] += [sat]
+                dic_sat_data['s1c'] += [s1c]
+
+        #Read the next line:
+        line = file.readline()
+
+    #Close the Rinex file:
+    file.close()
+
+    #Convert the dictionnary to a Pandas DataFrame object:
+    df_sat_data = pd.DataFrame(dic_sat_data)
+
+    return df_sat_data
+</code></pre>
+<p>Essayez de comprendre ce que fait cette fonction grâce à ses commentaires.</p>
+<p>D'ailleurs, <strong>n'oubliez pas de commenter vos propres programmes durant le projet évalué !</strong>
+Un programme commenté est plus simple à maintenir et à partager.
+En Python, on commente avec le symbole "#".</p>
+<p>N'hésitez pas aussi à ajouter des en-têtes ("header") en commentaires de vos fichiers Python, pour expliquer à quoi ils servent, ce qu'ils prennent en entrée / donnent en sortie, qui les ont codés.</p>
+<p>Si vous n'avez pas compris certains passages de ce code, vous trouverez ci-dessous quelques rappels de Python dont vous aurez besoin pour votre projet.</p>
+<p>Si vous êtes à l'aise en Python, et que vous avez tout compris du code ci-dessus, vous pouvez directement passer à la partie suivante.</p>
+<h2 id="les-types">Les types</h2>
+<p>Les objets que l'on manipule en Python peuvent avoir <strong>différents types</strong>.</p>
+<p>Voici les types d'objets "natifs" (toujours présents) en Python :</p>
+<ul>
+<li>
+<p><strong>Integer</strong> (int) : nombre entier positif ou négatif.</p>
+</li>
+<li>
+<p><strong>Float</strong> (float) : nombre réel représenté en "point flottant".</p>
+</li>
+<li>
+<p><strong>Complex</strong> (complex) : nombre complexe, avec une représentation du type "3+1j" avec "j" la racine de -1.</p>
+</li>
+<li>
+<p><strong>String</strong> (str) : une chaine de charactères, définie entre guillemets.</p>
+</li>
+<li>
+<p><strong>Boolean</strong> (bool) : "True" ou "False", utiles pour des opérations d'algèbre booléenne.</p>
+</li>
+<li>
+<p>Les conteneurs : <strong>Listes</strong>, <strong>dictionnaires</strong>, <strong>sets</strong> et <strong>tuples</strong> permettent de ranger de différentes manières d'autres objets. 
+Nous verrons en détails dans ce tutoriel les listes et les dictionnaires.
+Il est à noter qu'un string est théoriquement un conteneur.</p>
+</li>
+</ul>
+<p>Le "typage" (la définition du type d'un objet à sa création) est automatique en Python.
+C'est bien pratique, mais cela peut être source d'erreurs.
+<strong>Faites-y attention !</strong></p>
+<p>Il est possible de convertir un objet d'un type en autre, avec les fonctions natives : "int()", "float()", "complex()", "str()" ou "bool()".</p>
+<p>Essayez de comprendre quel est le type de chaque objet utilisé dans notre fonction. 
+Repérez les conversions d'un type à un autre, et essayez de deviner leur utilité.
+Certaines seront plus claires dans la suite de cette partie.</p>
+<h2 id="les-fonctions">Les fonctions</h2>
+<p>Il est courant en programmation de ranger un groupe d'instructions sous la forme de "<strong>fonctions</strong>".</p>
+<p>On peut voir une fonction comme une boîte noire qui prend des objets en entrée, et les utilise pour générer de nouveaux objets en sortie.</p>
+<p>Les entrées et les sorties peuvent être n'importe quel objet Python.
+Par contre attention, le type de ces objets n'est définit nulle part dans la fonction : il faudra bien préciser en commentaires et dans la documentation le type des entrées / sorties, pour qu'un utilisateur ne se trompe pas.</p>
+<p>En Python, on définit une fonction de la manière suivante :</p>
+<pre><code>def nom_de_la_fonction(entree_1,entree_2,entree_3,...):
+
+    ...
+
+    return sortie_1,sortie_2,sortie_3,...
+</code></pre>
+<p><strong>Faites bien attention à ce que le contenu de la fonction soit indenté !</strong>
+Le ":", les indentations et le "return" sont les indicateurs qui permettent à Python de comprendre où commence la fonction, quelles sont les instructions de la fonction, et où fini la fonction.</p>
+<p>Pour appeler cette fonction avec des entrées données, et en récupérer les sorties, il suffira de taper la commande suivante :</p>
+<pre><code>sortie_1,sortie_2,sortie_3,... = nom_de_la_fonction(entree_1,entree_2,entree_3,...)
+</code></pre>
+<p>Il est conseillé de mettre comme entrées de la fonction tous les paramètres que l'on pourra vouloir faire varier d'une application de la fonction à une autre, quitte à leur donner des valeurs par défaut.</p>
+<p>En Python, pour donner une valeur par défaut de 31 à la 3ème entrée d'une fonction, il suffit par exemple d'écrire :</p>
+<pre><code>def nom_de_la_fonction(entree_1,entree_2,entree_3=31,...):
+
+    ...
+
+    return sortie_1,sortie_2,sortie_3,...
+</code></pre>
+<p>On peut alors appeler la fonction sans la 3ème entrée, qui prendra alors la valeur 31.</p>
+<p>Attention, lorsqu'un objet est mis en entrée d'une fonction, et que cette fonction réalise des opération sur l'objet, il restera inchangé.
+En effet, la fonction ne travaille pas directement sur les entrées, mais sur une copie de ces entrées : des "<strong>variables locales</strong>".</p>
+<p>Pour qu'une fonction modifie un objet, il faut utiliser l'instruction "global", pour indiquer à la fonction qu'il s'agit d'une "<strong>variable globale</strong>".</p>
+<p>Par exemple :</p>
+<pre><code>global nom_de_la_variable = 10
+</code></pre>
+<p>Comprenez-vous à présent ce que prend la fonction "read" en entrée et en sortie ?</p>
+<h2 id="les-listes-et-les-dictionnaires">Les listes et les dictionnaires</h2>
+<p>En Python comme dans d'autres langages de programmation, il est parfois pratique de pouvoir ranger des données dans des "<strong>conteneurs</strong>".</p>
+<p>On peut voir un conteneur comme un classeur, dans lequel on vient ranger des informations, avec différents systèmes de rangement.</p>
+<p>Dans ce tutoriel, nous utilisons 2 types de conteneurs natifs Python : les <strong>listes</strong> et les <strong>dictionnaires</strong>.</p>
+<p>Les listes comme les dictionnaires peuvent contenir n'importe quel type d'objet Python, mais classés de manière différente.</p>
+<h3 id="listes">Listes</h3>
+<p>Une liste range les objets <strong>dans un certain ordre</strong> : on associe à chaque objet un <strong>index</strong>.</p>
+<p>Une liste est définie à l'aide de "[ ]".</p>
+<p>On peut par exemple définir une liste de la manière suivante :</p>
+<pre><code>nom_de_la_liste = [59,'Lille',34.8]
+</code></pre>
+<p>Pour récupérer le 2ème élément de la liste dans une variable, on utilise la commande :</p>
+<pre><code>variable = nom_de_la_liste[1]
+</code></pre>
+<p>Pour modifier le 3ème élément de la liste, on utilise la commande :</p>
+<pre><code>nom_de_la_liste[2] = 'Toulouse'
+</code></pre>
+<p>Et oui, les indices d'une liste vont de 0 à la taille de la liste - 1.
+Il est d'ailleurs possible de récupérer la taille de la liste avec la commande suivante :</p>
+<pre><code>len(nom_de_la_liste)
+</code></pre>
+<p>On peut également initialiser une liste vide, et y ajouter des éléments petit à petit de la manière suivante :</p>
+<pre><code>nom_de_la_liste = []
+nom_de_la_liste += [59]
+nom_de_la_liste += ['Lille']
+nom_de_la_liste += [34.8]
+</code></pre>
+<p>Ceci est possible car le "+" pour une liste n'est pas l'opérateur "addition" mais "concaténer".</p>
+<p>Attention, n'oubliez pas que pour une liste, l'ordre de concaténation compte : le "+" n'est pas symétrique !</p>
+<p>Enfin, on peut récupérer un morceau d'une liste, en utilisant le caractère ":".</p>
+<p>Par exemple, pour récupérer les éléments de l'indice 1 à l'indice 3 d'une liste, on écrit :</p>
+<pre><code>nom_de_la_liste[1:3]
+</code></pre>
+<h3 id="dictionnaires">Dictionnaires</h3>
+<p>Un dictionnaire associe à chaque objet une <strong>clé</strong> : un string qui sert "d'étiquette" pour retrouver l'objet.</p>
+<p>Un dictionnaire est défini à l'aide de "{ }".</p>
+<p>On peut par exemple définir un dictionnaire de la manière suivante :</p>
+<pre><code>nom_du_dictionnaire = {'departement': 59, 'ville': 'Lille', 'surface': 34.8}
+</code></pre>
+<p>Pour récupérer l'élément associé à la clé "departement" dans une variable, on utilise la commande :</p>
+<pre><code>variable = nom_du_dictionnaire['departement']
+</code></pre>
+<p>Pour modifier l'élément associé à la clé "ville", on utilise la commande :</p>
+<pre><code>nom_du_dictionnaire['ville'] = 'Toulouse'
+</code></pre>
+<p>On peut également initialiser un dictionnaire vide, et y ajouter des éléments petit à petit de la manière suivante :</p>
+<pre><code>nom_du_dictionnaire = {}
+nom_du_dictionnaire['departement'] = 59
+nom_du_dictionnaire['ville'] = 'Lille'
+nom_du_dictionnaire['surface'] = 34.8
+</code></pre>
+<p>Pour un dictionnaire, l'ordre d'ajout des éléments n'a pas d'importance.</p>
+<h2 id="ouvrir-et-lire-un-fichier">Ouvrir et lire un fichier</h2>
+<p>Pour <strong>ouvrir un fichier</strong> avec Python, on peut utiliser la fonction native "<strong>open()</strong>".</p>
+<p>Cette fonction prend 2 entrées : le chemin du fichier sur l'ordinateur, et le mode d'ouverture.</p>
+<p>Le mode d'ouverture est indiqué par une des 4 chaines de caractères suivantes :</p>
+<ul>
+<li>
+<p>"r" : mode lecture, retourant une erreur si le fichier n'existe pas.</p>
+</li>
+<li>
+<p>"a" : mode ajout, ajoutant du contenu en fin de fichier, et créant le fichier s'il n'existe pas.</p>
+</li>
+<li>
+<p>"w" : mode écriture, créant le fichier s'il n'existe pas.</p>
+</li>
+<li>
+<p>"x" : mode création, retournant une erreur si le fichier existe déjà.</p>
+</li>
+</ul>
+<p>On peut également écrire "r+" pour ouvrir un fichier en mode lecture <strong>et</strong> écriture.</p>
+<p>Si le fichier à ouvrir est en binaire, il faut ajouter un "b" au mode.</p>
+<p>Comprenez-vous alors cette ligne de code de notre fonction ?</p>
+<pre><code>file = open(file_path,'r')
+</code></pre>
+<p>Une fois le fichier ouvert, on peut le lire ligne par ligne avec la fonction "readline()" : </p>
+<pre><code>line = file.readline()
+</code></pre>
+<p>Si l'on appelle une 1ère fois la fonction, on récupère la 1ère ligne. 
+Si on l'appelle une 2nde fois, on récupère la 2ème ligne.
+Et ainsi de suite.</p>
+<p>La variable "line" contient alors une chaine de caractères, dont on peut récupérer les éléments de la même manière que pour une liste.
+Par exemple :</p>
+<pre><code>caractere = line[45]
+</code></pre>
+<p>Il est également possible de récupérer toutes les lignes sous la forme d'une liste, avec :</p>
+<pre><code>lines = file.readlines()
+</code></pre>
+<p>On peut alors récupérer une ligne avec :</p>
+<pre><code>line = file.readline()
+</code></pre>
+<p><strong>Attention ! Il ne faut pas oublier de fermer un fichier qu'on a ouvert !</strong>
+Il faut alors utiliser la commande :</p>
+<pre><code>file.close()
+</code></pre>
+<h2 id="boucles-et-conditions">Boucles et conditions</h2>
+<h3 id="for-et-while">For et While</h3>
+<p>Lorsque l'on veut <strong>itérer sur une suite d'opérations</strong>, plutôt que d'écrire toutes les opérations on peut utiliser <strong>une boucle</strong>.</p>
+<p>En Python, il existe 2 grands types de boucles : les boucles "For" et les boucles "While".</p>
+<ul>
+<li>
+<p>Si le <strong>nombre d'itérations</strong> nécessaires pour réaliser la tâche souhaitée est <strong>connu</strong>, on utilisera une boucle <strong>For</strong>.</p>
+</li>
+<li>
+<p>Si le <strong>nombre d'itérations</strong> nécessaires pour réaliser la tâche souhaitée est <strong>inconnu</strong>, on utilisera une boucle <strong>While</strong>.</p>
+</li>
+</ul>
+<p>Si on veut réaliser des itérations sur un variable "i", entre des entiers "it_start" et "it_stop", avec un pas "it_step", on écrit :</p>
+<pre><code>for i in range(it_start,it_stop_it,it_step):
+
+    ...
+</code></pre>
+<p><strong>Attention, il ne faut pas oublier de mettre une indentation devant les instructions de la boucle For !</strong>
+La fin des indentations est ce qui permet à Python de comprendre que l'on sort de la boucle.</p>
+<p>On peut aussi itérer sur les éléments d'un conteneur :</p>
+<pre><code>for element in conteneur:
+
+    ...
+</code></pre>
+<p>Si on veut réaliser une suite d'opérations tant qu'une condition est respectée, on écrit :</p>
+<pre><code>While condition:
+
+    ...
+</code></pre>
+<p>Une condition peut par exemple être "i&lt;10" si on veut itérer tant que "i" est inférieur à 10.</p>
+<p><strong>Une fois de plus, il ne faut pas oublier de mettre une indentation devant les instructions de la boucle While !</strong></p>
+<p>Le risque lorsque l'on utilise une boucle While est que la condition d'arrêt ne soit jamais respectée : la boucle tourne alors à l'infini.
+<strong>Assurez-vous que votre boucle While finira bienpar s'arrêter !</strong></p>
+<p>Regardez quelles boucles sont utilisées par notre fonction "read".
+Pourquoi avons-nous choisi ce type de boucle ici ?</p>
+<h3 id="if-et-else">If et Else</h3>
+<p>Parfois, on peut vouloir réaliser des instructions uniquement <strong>quand des conditions sont respectées</strong>.</p>
+<p>Dans ces cas-là, on utilise en Python les instructions "If", "Elif" et "Else" : </p>
+<ul>
+<li>
+<p><strong>If</strong> : instructions à réaliser si la 1ère (ou unique) condition est vérifiée.</p>
+</li>
+<li>
+<p><strong>Elif</strong> : instructions à réaliser si cette condition est respectée et que les conditions précédentes ne l'étaient pas.</p>
+</li>
+<li>
+<p><strong>Else</strong> : instructions à réaliser si aucune des autres consitions n'est respectée.</p>
+</li>
+</ul>
+<p>Voici un exemple de structure :</p>
+<pre><code>if condition_1:
+
+    ...
+
+elif condition_2:
+
+    ...
+
+elif condition_3:
+
+    ...
+
+else:
+
+    ...
+</code></pre>
+<p><strong>Encore une fois, il ne faut pas oublier de mettre une indentation devant les instructions après un If, Elif ou Else.</strong></p>
+<p>Il y a quelques "If" dans notre fonction "read".
+Essayez de comprendre à quoi ils servent.</p>
+<h2 id="les-dates">Les dates</h2>
+<p>Beaucoup de données que vous serez amenés à manipuler seront <strong>datées</strong>.
+C'est le cas des observations GPS contenues dans un fichier Rinex.</p>
+<p>La <strong>manipulation</strong> de dates (ranger dans l'ordre chronologique, additions, soustractions, utilisation pour un axe d'une figure, etc.) n'est pas simple et nécessite des fonctions particulières.</p>
+<p>C'est pourquoi il existe une <strong>bibliothèque "datetime"</strong>, qui permet de manipuler des <strong>objets "datetime"</strong>, qui facilitent la manipulation des dates.</p>
+<p>Datetime est en général déjà contenue dans Python.
+Vous pouvez importer le package "datetime" de la bibliothèque "datetime" avec la commande suivante :</p>
+<pre><code>from datetime import datetime
+</code></pre>
+<p>On peut définir un objet "datetime" correspondant à une date jour/mois/annee heure:minute:seconde avec la commande :</p>
+<pre><code>date = datetime(annee,mois,jour,heure,minute,seconde)
+</code></pre>
+<p>Datetime utilise le calendrier Grégorien, considère qu'il y a 86400 secondes dans une journée.</p>
+<p>Comme nous le verrons plus tard dans ce tutoriel, une liste de datetimes peut être utilisée comme axe d'une figure Matplotlib.</p>
+<p>Pour calculer la somme ou la différence entre 2 intervalles de temps, la bibliothèque datetime contient aussi des objets "<strong>timedelta</strong>", importable comme suit :</p>
+<pre><code>from datetime import timedelta
+</code></pre>
+<p>On peut alors initialiser un timedelta en donnant un intervalle de temps en jours, heures, minutes, secondes, millisecondes, avec une commande du type :</p>
+<pre><code>dT = timedelta(days=...,hours=...,minutes=...,seconds=...,milliseconds=...)
+</code></pre>
+<p>Pour additionner, soustraire 2 timedeltas, il suffit d'utiliser les opérateurs "+" et "-".</p>
+<p>Essayez de comprendre comment sont utilisés les objets "datetime" dans la fonction "read".</p>
+<h2 id="les-dataframe-pandas">Les DataFrame Pandas</h2>
+<p>En <strong>analyse de données</strong> avec Python, on utilise souvent la bibliothèque "<strong>Pandas</strong>", importable avec :</p>
+<pre><code>import pandas as pd 
+</code></pre>
+<p>(Si vous n'avez pas cette bibliothèque d'installée sur votre version de Python, utilisez la commande "pip install pandas".</p>
+<p>Cette bibliothèque propose notamment un nouveau type de conteneur appelé "<strong>DataFrame</strong>", ainsi que des outils d'analyses qui vont avec.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pandas DataFrame</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Un DataFrame Pandas est un tableau 2D, de taille modifiable, pouvant contenir des objets de plusieurs types différents.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Il est constitué de :</td>
+</tr>
+<tr>
+<td style="text-align: left;">- "Columns" : colonnes ayant chacune un label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">- "Index" : lignes ayant chacune un numéro, ou un index s'il est fourni.</td>
+</tr>
+</tbody>
+</table>
+<p>On peut construire un DataFrame <strong>à partir d'un dictionnaire</strong> et de la fonction "pd.DataFrame()", chaque clé correspondant à un label de colonne.</p>
+<p>Par exemple si on écrit les commandes :</p>
+<pre><code>dic_sat_data = {'epoch': [1,2,3], 'sat': ['G01','G02','G03'] 's1c': [45,46,49]}
+df_sat_data = pd.DataFrame(dic_sat_data)
+</code></pre>
+<p>On obtient le DataFrame suivant :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">index</th>
+<th style="text-align: center;">epoch</th>
+<th style="text-align: center;">sat</th>
+<th style="text-align: center;">s1c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">'G01'</td>
+<td style="text-align: center;">45</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">'G02'</td>
+<td style="text-align: center;">46</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">'G03'</td>
+<td style="text-align: center;">49</td>
+</tr>
+</tbody>
+</table>
+<p>Essayez de comprendre la structure du DataFrame obtenu en sortie de notre fonction "read()".</p>
+<p>Les DataFrames Pandas sont très pratiques pour manipuler des gros ensembles de données et réaliser des affichages.
+Ils peuvent aussi mis directement en entrée de certains outils de Machine-Learning.</p>
+<p>Nous verrons dans la suite de ce tutoriel quelques manipulations de base de ce type de conteneur.</p>
+<hr />
+<p>Nous avons à présent dans notre projet une fonction permettant d'importer les données S1C à partir d'un fichier Rinex.
+Dans la partie suivante, nous allons coder une fonction pour manipuler ces données, afin d'obtenir la sortie dont nous avons besoin : notre choix de satellite pivot à chaque instant.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2_Projet_python/" class="btn btn-neutral float-left" title="2. Mise en forme du module Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../4_Traitement_donnees/" class="btn btn-neutral float-right" title="4. Traitement des données">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../2_Projet_python/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../4_Traitement_donnees/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

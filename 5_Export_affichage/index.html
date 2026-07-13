@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nicolas OUDART" /><link rel="canonical" href="https://nicoudart.github.io/UVSQ_M2_NewSpace_TP_Python/5_Export_affichage/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>5. Export et affichage - UVSQ_M2_NewSpace_TP_Python</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "5. Export et affichage";
+        var mkdocs_page_input_path = "5_Export_affichage.md";
+        var mkdocs_page_url = "/UVSQ_M2_NewSpace_TP_Python/5_Export_affichage/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UVSQ_M2_NewSpace_TP_Python
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../1_Contexte/">1. Contexte</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../2_Projet_python/">2. Mise en forme du module Python</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../3_Lecture_fichier/">3. Lecture du fichier</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../4_Traitement_donnees/">4. Traitement des données</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">5. Export et affichage</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#completer-function_displaypy">Compléter function_display.py</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#affichages-a-partir-dun-dataframe">Affichages à partir d'un DataFrame</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#completer-function_exportpy">Compléter function_export.py</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#export-de-donnees-en-fichier-csv">Export de données en fichier CSV</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../6_Exemples_tests/">6. Exemples et tests</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../7_Documentation/">7. Documentation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UVSQ_M2_NewSpace_TP_Python</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">5. Export et affichage</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="etape-5-export-et-affichage-des-resultats">Etape 5 : Export et affichage des résultats</h1>
+<p>Nous allons maintenant voir comment écrire une fonction pour <strong>afficher</strong>, et une fonction pour <strong>exporter</strong> le satellite pivot choisi au cours du temps.</p>
+<hr />
+<h2 id="completer-function_displaypy">Compléter function_display.py</h2>
+<p>Ouvrez le fichier "function_display.py" de votre projet.</p>
+<p>Complétez-la avec le code suivant :</p>
+<pre><code>###############################################################################
+#HEADER
+
+#This short function returns a figure showing the GPS satellite number of the 
+#selected pivot, as a function of time.
+
+#Inputs:
+#   -df_pivot: Pandas DataFrame as returned by the &quot;pivot&quot; function. 
+
+#Outputs:
+#   -fig_pivot: Matplotlib axes object of the selected pivot satellite as a 
+#               function of time.
+
+#Author: Arthur DENT
+
+###############################################################################
+
+#Function definition:----------------------------------------------------------
+
+def display(df_pivot):
+
+    fig_pivot = df_pivot.plot(kind='scatter',x='date',y='sat',title='Selected GPS pivot satellite',xlabel='Date - Time',ylabel='GPS satellite number',color='r',grid='True',yticks=[i for i in range(1,df_pivot['sat'].max()+1)])
+
+    return fig_pivot
+</code></pre>
+<p>Cette fonction réalise un affichage en nuage de points ("scatter plot") des satellites GPS sélectionnés comme pivots en fonction du temps.</p>
+<p>Nous allons voir dans la suite comment utiliser la méthode "plot" des DataFrames Pandas afin de réaliser des affichages graphiques.</p>
+<p>Si vous connaissez déjà bien Pandas, et que vous avez tout compris du code ci-dessus, vous pouvez directement passer à la section suivante.</p>
+<h2 id="affichages-a-partir-dun-dataframe">Affichages à partir d'un DataFrame</h2>
+<p>Les DataFrames Pandas ont une méthode associée "<strong>plot()</strong>", qui fait appel à la bibliothèque <strong>Matplotlib</strong> pour facilement réaliser des affichages graphiques.</p>
+<p>On donne en entrée de la méthode le type d'affichage à réaliser (dans notre cas un nuage de points), les colonnes du DataFrame à utiliser pour les différents axes x et y, et les labels.
+D'autres paramètres de mise en forme de la figure sont possibles (dans notre cas la couleur des points, l'ajout d'une grille en fond, la position des labels sur l'axe des y).</p>
+<p>Ce qui donne une commande du type :</p>
+<pre><code>df.plot(kind='...',x='...',y='...',title='...',xlabel='...',ylabel='...')
+</code></pre>
+<p>A partir de ces informations, essayez de comprendre notre fonction "display".</p>
+<p>Voici ce que cette fonction donnera une fois appliquée à notre fichier exemple de la station GODS :</p>
+<p><img alt="Figure exemple" src="../img/Figure_pivot.png" /></p>
+<p>Voici une petite liste des types d'affichages graphiques possibles avec Pandas :</p>
+<ul>
+<li>
+<p>"line" : une courbe classique, c'est le mode par défaut.</p>
+</li>
+<li>
+<p>"bar" : un diagramme en barres.</p>
+</li>
+<li>
+<p>"hist" : un histogramme.</p>
+</li>
+<li>
+<p>"box" : une boîte à moustaches.</p>
+</li>
+<li>
+<p>"kde" : "Kernel Density Estimation".</p>
+</li>
+<li>
+<p>"area" : un graphique en aires.</p>
+</li>
+<li>
+<p>"pie" : un camembert.</p>
+</li>
+<li>
+<p>"scatter" : un nuage de points.</p>
+</li>
+</ul>
+<p>A vous de choisir le type d'affichage le plus pertinent pour votre projet !</p>
+<h2 id="completer-function_exportpy">Compléter function_export.py</h2>
+<p>Ouvrez le fichier "function_export.py" de votre projet.</p>
+<p>Complétez-la avec le code suivant :</p>
+<pre><code>###############################################################################
+#HEADER
+
+#This function writes a CSV file containing the GPS satellite number of the
+#selected pivot, as a function of time. The path of and name of the CSV file is 
+#defined by the user.
+
+#Inputs:
+#   -df_pivot: Pandas DataFrame as returned by the &quot;pivot&quot; function.
+#   -file_path: path of the directory where the CSV file will be saved.
+#   -file_name: name of the CSV file to be saved.
+
+#Outputs:
+#   -None.
+
+#Author: Arthur DENT
+
+###############################################################################
+
+#Libraries importation:--------------------------------------------------------
+
+import os
+
+#Function definition:----------------------------------------------------------
+
+def export(df_pivot,file_path,file_name):
+
+    #Open the CSV file at the given path, with the given name:
+    file = open(os.path.join(file_path,file_name+'.csv'),'w')
+
+    #Write the header, containing the columns names:
+    file.write('date,pivot\n')
+
+    #Iterate on the rows of the Pandas DataFrame:
+    for idx in range(len(df_pivot)):
+
+        #Write a line containing a date / pivot satellite number couple:
+        file.write(str(df_pivot['date'].loc[idx])+','+str(df_pivot['sat'].loc[idx])+'\n')
+
+    #Close the CSV file:
+    file.close()
+</code></pre>
+<p>Cette fonction permet d'exporter le DataFrame contenant le satellite GPS choisi comme pivot en fonction du temps sous la forme d'un <strong>fichier CSV</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Définition du format CSV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ce sont les initiales de "Comma Separated Values".</td>
+</tr>
+<tr>
+<td style="text-align: left;">Il s'agit d'un format d'encodage de données sous la forme d'un <strong>tableau</strong>, dans un fichier texte.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comme son nom l'indique, chaque ligne représentera une ligne du tableau, dont les éléments pour chaque colonne seront <strong>séparés par une virgule</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">La 1ère ligne correspond en général aux labels des colonnes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">La fin d'une ligne est en général marquée par le caractère de retour à la ligne '\n'.</td>
+</tr>
+</tbody>
+</table>
+<p>Par exemple, le CSV suivant :</p>
+<pre><code>date,pivot
+2024-05-04 00:00:00,15
+2024-05-04 00:00:30,15
+2024-05-04 00:01:00,15
+</code></pre>
+<p>donnera le tableau :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">date</th>
+<th style="text-align: center;">pivot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2024-05-04 00:00:00</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr>
+<td style="text-align: center;">2024-05-04 00:00:30</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr>
+<td style="text-align: center;">2024-05-04 00:01:00</td>
+<td style="text-align: center;">15</td>
+</tr>
+</tbody>
+</table>
+<p>Le format CSV est un classique en analyse de données.
+Il est lisible par de nombreux logiciels (dont Office Excel et OpenOffice Calc), et importable sous la forme d'un DataFrame avec Pandas avec la méthode :</p>
+<pre><code>df = pd.read_csv('...')
+</code></pre>
+<p>qui prend en entrée le chemin du fichier à importer.</p>
+<p>Nous allons voir dans la suite comment écrire un fichier CSV avec Python.</p>
+<p>Il est à noter que les DataFrames Pandas ont une méthode associée "to_csv()", qui permet en une ligne d'exporter un DataFrame en un fichier CSV.
+Nous avons re-codé l'export ici dans le seul but de vous faire découvrir la méthode "write", qui est applicable à d'autres types de fichiers que les CSV.</p>
+<p>Si vous savez déjà écrire un fichier avec Python, et que vous avez tout compris du code ci-dessus, vous pouvez directement passer à la partie suivante.</p>
+<h2 id="export-de-donnees-en-fichier-csv">Export de données en fichier CSV</h2>
+<p>Nous avons vu précédemment comment ouvrir fichier avec la fonction Python "open", et le lire ligne à ligne avec la fonction "readline".</p>
+<p>Une fois un fichier ouvert en mode écriture :</p>
+<pre><code>file = open(file_path,'r')
+</code></pre>
+<p>on peut aussi écrire dedans avec la fonction Python "<strong>write</strong>" :</p>
+<pre><code>file.write('...')
+</code></pre>
+<p>qui prend en entrée la chaîne de caractère à écrire dans le fichier.</p>
+<p>Pour passer une ligne, il faut ajouter '\n' à la fin de la chaîne de caractères.</p>
+<p>Comme expliqué précédemment, il ne faut pas oublier de fermer le fichier après utilisation :</p>
+<pre><code>file.close()
+</code></pre>
+<p>Vous devriez à présent comprendre ce que fait notre fonction "export".</p>
+<hr />
+<p>Nous avons à présent dans notre projet des fonctions permettant d'afficher des graphiques de nos données, et de les exporter au format CSV.
+Dans la partie suivante, nous allons écrire des scripts d'exemple et de test de notre projet.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../4_Traitement_donnees/" class="btn btn-neutral float-left" title="4. Traitement des données"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../6_Exemples_tests/" class="btn btn-neutral float-right" title="6. Exemples et tests">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../4_Traitement_donnees/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../6_Exemples_tests/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

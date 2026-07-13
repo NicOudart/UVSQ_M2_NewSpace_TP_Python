@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nicolas OUDART" /><link rel="canonical" href="https://nicoudart.github.io/UVSQ_M2_NewSpace_TP_Python/2_Projet_python/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>2. Mise en forme du module Python - UVSQ_M2_NewSpace_TP_Python</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2. Mise en forme du module Python";
+        var mkdocs_page_input_path = "2_Projet_python.md";
+        var mkdocs_page_url = "/UVSQ_M2_NewSpace_TP_Python/2_Projet_python/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UVSQ_M2_NewSpace_TP_Python
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../1_Contexte/">1. Contexte</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">2. Mise en forme du module Python</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#structure-generale">Structure générale</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dossier-src-et-packages">Dossier src et Packages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dossier-docs-et-markdown">Dossier docs et Markdown</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dossiers-examples-et-test">Dossiers examples et test</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#readme">Readme</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../3_Lecture_fichier/">3. Lecture du fichier</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../4_Traitement_donnees/">4. Traitement des données</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../5_Export_affichage/">5. Export et affichage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../6_Exemples_tests/">6. Exemples et tests</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../7_Documentation/">7. Documentation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UVSQ_M2_NewSpace_TP_Python</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">2. Mise en forme du module Python</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="etape-2-structurer-un-projet-python">Etape 2 : Structurer un projet Python</h1>
+<p>Pour commencer, nous allons voir comment structurer un <strong>projet Python</strong> de manière à ce qu'il soit importable / utilisable le plus simplement possible.</p>
+<hr />
+<h2 id="structure-generale">Structure générale</h2>
+<p>Il n'y a pas vraiment de règles fixes pour structuration d'un projet Python.
+Cependant, il y a quelques "bonnes pratiques" suivies par la plupart des développeurs.</p>
+<p>En génénal, un projet Python est rangé dans un dossier contenant au minimum les éléments suivants :</p>
+<p><img alt="Structure du projet" src="../img/Projet_structure.png" /></p>
+<p>On y trouve 4 sous-dossiers :</p>
+<ul>
+<li>
+<p><strong>src</strong> : qui contiendra les codes sources de notre projet, sous la forme d'un <strong>Package</strong>.</p>
+</li>
+<li>
+<p><strong>docs</strong> : qui contiendra la documentation de notre projet, en langage <strong>Markdown</strong>.</p>
+</li>
+<li>
+<p><strong>examples</strong> : qui contiendra des scripts Python d'exemple, appliquant les fonctions de notre projet à un cas concret.</p>
+</li>
+<li>
+<p><strong>test</strong> : qui contiendra des scripts Python pour tester automatiquement les fonctions de notre projet.</p>
+</li>
+</ul>
+<p>Et 3 fichiers :</p>
+<ul>
+<li>
+<p><strong>readme.md</strong> : qui contiendra un descriptif rapide du projet, en langage <strong>Markdown</strong>.</p>
+</li>
+<li>
+<p><strong>requirements.txt</strong> : qui contiendra la liste des bibliothèques nécessaires à faire fonctionner le projet.</p>
+</li>
+<li>
+<p><strong>setup.py</strong> : qui contiendra des informations sur le projet, nécessaires à installer le projet avec la commande "pip install".</p>
+</li>
+</ul>
+<p>Créez un dossier sur votre ordinateur, du nom de "PyS1C", qui contiendra notre projet.</p>
+<p>Dans ce dossier, créez des sous-dossiers "src", "docs", "examples" et "test".
+Créez aussi des fichiers vides "readme.md", "requirements.txt" et "setup.py".</p>
+<p>Dans cette partie du tutoriel, nous allons commencer à remplir ces sous-dossiers et fichiers.</p>
+<h2 id="dossier-src-et-packages">Dossier src et Packages</h2>
+<p>En général, le <strong>code source</strong> d'un projet Python sera rangé dans le dossier "src", sous la forme de <strong>fonctions</strong> (ou de classes en Programmation Orientée Objet).</p>
+<p>On peut ranger les fonctions avec 2 niveaux de hierarchisation :</p>
+<ul>
+<li>
+<p>Un <strong>module</strong> est un fichier Python contenant un ensemble de fonctions.</p>
+</li>
+<li>
+<p>Un <strong>package</strong> est un dossier contenant un ensemble de modules.</p>
+</li>
+</ul>
+<p>On peut alors importer n'importe quelle fonction contenue dans un module, lui-même contenu dans un package, de la manière suivante :</p>
+<pre><code>from package.module import fonction
+</code></pre>
+<p>Vous avez sûrement déjà vu ce type de commandes : c'est ce que vous utilisez pour importer des fonctions de bibliothèques Python telles que Numpy ou Matplotlib.</p>
+<p>Pour faire simple dans ce tutoriel, notre projet "PyS1C" ne contiendra qu'un seul package "PyS1C", et chaque module ne contiendra qu'une seule fonction.</p>
+<p>Créez un dossier "PyS1C" dans votre dossier "src".</p>
+<p>Dans ce dossier, créez les modules vides suivants : </p>
+<ul>
+<li>
+<p>"function_read.py"</p>
+</li>
+<li>
+<p>"function_display.py"</p>
+</li>
+<li>
+<p>"function_pivot.py"</p>
+</li>
+<li>
+<p>"function_export.py"</p>
+</li>
+</ul>
+<p>Afin qu'un dossier contenant des modules soit reconnu comme un package, il faut qu'il contienne un fichier "_init_.py", appelé <strong>initialisateur</strong>.
+Comme son nom l'indique, il est executé automatiquement à l'initialisation du package.</p>
+<p>Ce fichier peut en théorie être vide, mais on s'en sert souvent pour importer les fonctions de tous les modules du package.</p>
+<p>Pour notre tutoriel, créez un fichier "__init__.py" dans le package "PyS1C", contenant les commandes suivantes :</p>
+<pre><code>from .function_read import read
+from .function_display import display
+from .function_pivot import pivot
+from .function_export import export
+</code></pre>
+<p>Le package importera ainsi les fonctions des différents modules à son initialisation.</p>
+<p>Les fonctions "read", "display", "pivot" et "export" seront définies plus tard dans ce tutoriel.</p>
+<p>Votre package a alors la structure suivante :</p>
+<p><img alt="Structure du package" src="../img/Package_structure.png" /></p>
+<h2 id="dossier-docs-et-markdown">Dossier docs et Markdown</h2>
+<p>En général, la <strong>documentation</strong> d'un projet Python sera rangé dans le dossier "docs", sous la forme de fichers <strong>Markdown</strong>.</p>
+<p>Le "Markdown" est un langage de programmation dit de "balisage", comme le HTML, mais à la syntaxe beaucoup plus simple.
+Il est couramment utilisé dans le domaine "Open-Source" pour générer la documentation de projets de programmation.</p>
+<p>Nous verrons quelques bases de ce langage plus tard dans ce tutoriel.</p>
+<p>En attendant, créez dans votre dossier "docs" un fichier Markdown vide "PyS1C_documentation.md" :</p>
+<p><img alt="Structure de la documentation" src="../img/Docs_structure.png" /></p>
+<h2 id="dossiers-examples-et-test">Dossiers examples et test</h2>
+<p>En général, des scripts Python d'<strong>exemple</strong> et de <strong>test</strong> d'un projet sont rangés dans les dossiers "examples" et "test".</p>
+<p>Les scripts d'exemple permettent à un utilisateur d'appliquer les différentes fonctionnalités du projet Python à un <strong>exemple simple</strong>, afin de comprendre rapidement son fonctionnement.</p>
+<p>Dans le cadre de ce tutoriel, nous implémenterons un unique script d'exemple, en fournissant un fichier Rinex d'exemple provenant de la station GODS.</p>
+<p>Créez dans le dossier "example" un script Python vide "PyS1C_example.py", et ajouter le fichier Rinex qui vous a été fourni <a href="https://github.com/NicOudart/UVSQ_M2_NewSpace_TP_Python/tree/main/example">ici</a> :</p>
+<p><img alt="Structure des exemples" src="../img/Example_structure.png" /></p>
+<p>Les scripts de test permettent d'automatiser la phase de test du projet, afin de vérifier qu'une modification n'a pas introduit des bugs ou dégradé les performances. 
+Toute la difficulté des tests est alors d'anticiper les cas d'utilisation du projet.</p>
+<p>Vous trouverez souvent dans les tests automatiques d'un projet de programmation les 3 types de tests :</p>
+<ul>
+<li>
+<p><strong>Tests unitaires</strong> : L'idée est de tester chaque fonction indépendemment.</p>
+</li>
+<li>
+<p><strong>Tests d'intégration</strong> : L'idée est de tester l'articulation des différentes fonctions entre elles.</p>
+</li>
+<li>
+<p><strong>Tests de validation / de performances</strong> : L'idée est de vérifier que le projet est bien conforme au cahier des charges.</p>
+</li>
+</ul>
+<p>Dans le cadre de ce tutoriel, nous n'implémenterons que les tests unitaires, sous la forme d'un unique script Python.</p>
+<p>Créez dans le dossier "test" un script Python vide "PyS1C_unit_test.py".
+Ajoutez-y aussi le fichier Rinex qui vous a été fourni :</p>
+<p><img alt="Structure des tests" src="../img/Test_structure.png" /></p>
+<p>Il est à noter que, si on a ici le même fichier pour l'exemple et les tests, on peut vouloir réaliser les tests et les exemples sur des données différentes.
+Dans notre cas, nous aurions évidemment pu mettre le fichier à un seul emplacement dans notre projet.</p>
+<h2 id="readme">Readme</h2>
+<p>Le fichier "Readme" d'un projet de programmation est en quelque sorte sa "4ème de courverture" : c'est le fichier qui doit absolument <strong>être lu avant d'utiliser le projet</strong>.</p>
+<p>Ce fichier contient en général les informations suivantes :</p>
+<ul>
+<li>
+<p>Description rapide du contenu.</p>
+</li>
+<li>
+<p>Comment installer le projet.</p>
+</li>
+<li>
+<p>Des mises à jours récentes ou des bugs connus.</p>
+</li>
+<li>
+<p>Les crédits, remerciements et licences.</p>
+</li>
+</ul>
+<p>Dans le cas des projets Python, ils sont souvent écrit en langage Markdown.</p>
+<p>Ajoutez ce code Markdown à votre fichier "README.md" :</p>
+<pre><code>#PyS1C
+
+Python project for the selection of the pivot GPS satellite from a Rinex file.
+
+## Overview
+
+PyS1C is a set of tools for the selection of a pivot GPS satellite in the context of Real-Time Kinematics (RTK) positionning.
+The C/N0 from L1 GPS signals (S1C) is exctracted from a Rinex file, and the pivot determined at each epoch as the GPS satellite having the highest C/N0.
+Results can be output as a figure or as a CSV file. 
+
+## Installation
+
+**Installation:**
+~~~
+pip install PyS1C
+~~~
+
+**Update:**
+~~~
+pip install PyS1C --upgrade
+~~~
+
+**Import:**
+~~~
+import PyS1C
+~~~
+
+## Changelog
+
+- **Version 1.0** : adding 4 functions to the PyS1C package (read, display, pivot, export).
+
+## Support
+
+Contact us at: arthur.dent@latmos.ipsl.fr
+
+## Credits
+
+© Arthur DENT
+
+## License
+
+This package is released under a MIT open source license. 
+</code></pre>
+<p>Vous pouvez déjà reconnaitre les différentes sections basiques d'un Readme.
+Nous expliquerons la syntaxe du Markdown plus tard dans ce tutoriel, lorsque écrirons la documentation de notre projet.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Lorsque le projet nécessite des <strong>bibliothèques Python</strong> particulières pour fonctionner (pas contenues dans les bibliothèques standards), il est possible de les indiquer dans un fichier "requirements.txt".</p>
+<p>Lors de l'installation du projet avec une commande "pip", les bibliothèques manquantes seront automatiquement installées.</p>
+<p>Notre projet nécessitera les bibliothèques : "Pandas" pour la manipulation de données, "Matplotlib" pour l'affichage graphique.</p>
+<p>Ajoutez donc ces 2 lignes à votre fichier "requirements.txt" :</p>
+<pre><code>pandas
+matplotlib
+</code></pre>
+<h2 id="setup">Setup</h2>
+<p>Pour être <strong>installable</strong> avec une simple commande "<strong>pip</strong>", votre projet doit contenir un script "setup.py", passant à une fonction "<strong>setup</strong>" toutes les informations nécessaires à sa <strong>distribution</strong>.</p>
+<p>Complétez votre fichier "setup.py" avec le programme suivant :</p>
+<pre><code>from setuptools import setup,find_packages
+
+setup(name='PyS1C',
+version='1.0',
+description='Python project for the selection of pivot satellite from S1C GPS signals',
+long_description=open(&quot;README.md&quot;).read(),
+long_description_content_type='text/markdown',
+author='Arthur DENT',
+author_email='arthur.dent@latmos.ipsl.fr',
+packages=find_packages('src'),
+install_requires=open(&quot;requirements.txt&quot;).read(),
+package_dir={ '' : 'src' },
+python_requires='&gt;=3.7',
+zip_safe=False,
+keywords=['GPS','pivot','C/N0','Rinex','S1C'],
+classifiers=[
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent',
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering :: Information Analysis'])
+</code></pre>
+<p>Vous pouvez voir que l'on fourni à la fonction "setup" les informations suivantes sur le projet :</p>
+<ul>
+<li>Le nom.</li>
+<li>La version.</li>
+<li>Une courte description.</li>
+<li>Une longue description (ici le Readme en Markdown).</li>
+<li>L'auteur et son contact.</li>
+<li>Les différents packages (on peut donner une liste de noms, ici on utilise la fonction "find_packages" qui recherche automatiquement les packages dans un dossier).</li>
+<li>Les bibliothèques particulières nécessaires (dans le fichier requirements).</li>
+<li>La version de Python minimale nécessaire.</li>
+<li>Les mots-clés associés.</li>
+<li>Des "classifiers" décrivant à qui s'adresse ce projet : <a href="https://pypi.org/classifiers">classifiers</a>.</li>
+</ul>
+<p>D'autres informations peuvent être fournies en entrée de "setup", et certaines ne sont pas obligatoires.</p>
+<p>Ce programme s'executera à l'installation de votre projet.</p>
+<hr />
+<p>Vous avez à présent la structure de base de votre projet !
+Dans la suite, nous allons voir comment remplir les fichiers que nous avons laissés vides.</p>
+<p>Il est à noter que par soucis de pédagogie, <strong>nous ne coderons pas nécessairement les fonctions de la manière la plus efficace</strong>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../1_Contexte/" class="btn btn-neutral float-left" title="1. Contexte"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../3_Lecture_fichier/" class="btn btn-neutral float-right" title="3. Lecture du fichier">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../1_Contexte/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../3_Lecture_fichier/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

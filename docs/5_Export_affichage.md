@@ -32,7 +32,7 @@ Complétez-la avec le code suivant :
 
 def display(df_pivot):
     
-    fig_pivot = df_pivot.plot(kind='scatter',x='date',y='sat',title='Selected GPS pivot satellite',xlabel='Date - Time',ylabel='GPS satellite number',color='r',grid='True',yticks=[i for i in range(1,df_pivot['sat'].max()+1)])
+    fig_pivot = df_pivot.plot(x='date',y='sat',style='r.',title='Selected GPS pivot satellite',xlabel='Date - Time',ylabel='GPS satellite number',grid='True',yticks=[i for i in range(1,int(df_pivot['sat'].max())+1)])
     
     return fig_pivot
 ~~~
@@ -47,13 +47,13 @@ Si vous connaissez déjà bien Pandas, et que vous avez tout compris du code ci-
 
 Les DataFrames Pandas ont une méthode associée "**plot()**", qui fait appel à la bibliothèque **Matplotlib** pour facilement réaliser des affichages graphiques.
 
-On donne en entrée de la méthode le type d'affichage à réaliser (dans notre cas un nuage de points), les colonnes du DataFrame à utiliser pour les différents axes x et y, et les labels.
-D'autres paramètres de mise en forme de la figure sont possibles (dans notre cas la couleur des points, l'ajout d'une grille en fond, la position des labels sur l'axe des y).
+On donne en entrée les colonnes du DataFrame à utiliser pour les différents axes x et y, et les labels.
+D'autres paramètres de mise en forme de la figure sont possibles (dans notre cas la couleur et le style de ligne, l'ajout d'une grille en fond, la position des labels sur l'axe des y).
 
 Ce qui donne une commande du type :
 
 ~~~
-df.plot(kind='...',x='...',y='...',title='...',xlabel='...',ylabel='...')
+df.plot(x='...',y='...',style='',title='...',xlabel='...',ylabel='...')
 ~~~
 
 A partir de ces informations, essayez de comprendre notre fonction "display".
@@ -62,25 +62,8 @@ Voici ce que cette fonction donnera une fois appliquée à notre fichier exemple
 
 ![Figure exemple](img/Figure_pivot.png)
 
-Voici une petite liste des types d'affichages graphiques possibles avec Pandas :
-
-- "line" : une courbe classique, c'est le mode par défaut.
-
-- "bar" : un diagramme en barres.
-
-- "hist" : un histogramme.
-
-- "box" : une boîte à moustaches.
-
-- "kde" : "Kernel Density Estimation".
-
-- "area" : un graphique en aires.
-
-- "pie" : un camembert.
-
-- "scatter" : un nuage de points.
-
-A vous de choisir le type d'affichage le plus pertinent pour votre projet !
+Vous pouvez jouer sur le paramètre "style" pour adapter la couleur et le type de ligne (points, tirets, ligne pleine, etc.) à votre projet.
+Ici "r." signifie une ligne rouge composée de points, donc un nuage de points rouges.
 
 ## Compléter function_export.py
 

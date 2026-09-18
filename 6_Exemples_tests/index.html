@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nicolas OUDART" /><link rel="canonical" href="https://nicoudart.github.io/UVSQ_M2_NewSpace_TP_Python/6_Exemples_tests/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>6. Exemples et tests - UVSQ_M2_NewSpace_TP_Python</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "6. Exemples et tests";
+        var mkdocs_page_input_path = "6_Exemples_tests.md";
+        var mkdocs_page_url = "/UVSQ_M2_NewSpace_TP_Python/6_Exemples_tests/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UVSQ_M2_NewSpace_TP_Python
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../1_Contexte/">1. Contexte</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../2_Projet_python/">2. Mise en forme du module Python</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../3_Lecture_fichier/">3. Lecture du fichier</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../4_Traitement_donnees/">4. Traitement des données</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../5_Export_affichage/">5. Export et affichage</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">6. Exemples et tests</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#completer-pys1c_examplepy">Compléter PyS1C_example.py</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-scripts-dexemple">Les scripts d'exemple</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#completer-pys1c_unit_testpy">Compléter PyS1C_unit_test.py</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-tests-unitaires">Les tests unitaires</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../7_Documentation/">7. Documentation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UVSQ_M2_NewSpace_TP_Python</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">6. Exemples et tests</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="etape-6-exemples-et-tests">Etape 6 : Exemples et tests</h1>
+<p>Nous allons maintenant voir comment écrire des scripts d'<strong>exemple</strong> et de <strong>test</strong> pour notre projet Python.</p>
+<hr />
+<h2 id="completer-pys1c_examplepy">Compléter PyS1C_example.py</h2>
+<p>Ouvrez le fichier "PyS1C_example.py" de votre projet.</p>
+<p>Complétez-la avec le code suivant :</p>
+<pre><code>###############################################################################
+#HEADER
+
+#This script applies the PyS1C functions to the example Rinex file provided 
+#along with this project (station GODS - 04/05/2024) :
+
+#   -Import GPS S1C data from the Rinex file.
+#   -Choose the pivot GPS satellite for each epoch.
+#   -Display a figure of the chosen pivot satellite as a function of time.
+#   -Export as a CSV file the chosen pivot satellite as a function of time.
+
+#Author: Arthur DENT
+
+###############################################################################
+
+#Libraries importation:--------------------------------------------------------
+import os
+import PyS1C
+
+#Output directory / name:------------------------------------------------------
+
+#Define the CSV output file path:
+output_path = os.path.dirname(__file__)
+
+#Define the CSV output file name:
+output_name = 'Pivot_GODS00USA_R_20241250000_01D_30S_MO'
+
+#Input directory:--------------------------------------------------------------
+
+#Define the path of the input Rinex file:
+input_path = os.path.join(os.path.dirname(__file__),'GODS00USA_R_20241250000_01D_30S_MO.rnx')
+
+#Example script:---------------------------------------------------------------
+
+#Read S1C data from the Rinex file:
+df_sat_data = PyS1C.read(input_path)
+
+#Choose the pivot satellite for each epoch:
+df_pivot = PyS1C.pivot(df_sat_data)
+
+#Display as a figure the chosen pivot satellite as a function of time:
+fig_pivot = PyS1C.display(df_pivot)
+
+#Export as a CSV file the chosen pivot satellite as a function of time:
+PyS1C.export(df_pivot,output_path,output_name)
+</code></pre>
+<p>Pour que ce code puisse tourner, il faut tout d'abord que PyS1C soit installé sur votre version de Python.
+Il ne faut donc pas oublier de faire tourner cette commande au préalable :</p>
+<pre><code>pip install path_PyS1C
+</code></pre>
+<p>en remplaçant "path_PyS1C" par le chemin de PyS1C sur votre ordinateur.</p>
+<p>Et à chaque mise à jour du projet :</p>
+<pre><code>pip install path_PyS1C --upgrade
+</code></pre>
+<p>en remplaçant "path_PyS1C" par le chemin de PyS1C sur votre ordinateur.</p>
+<p>Essayez de comprendre ce que ce script fait à partir des commentaires.</p>
+<h2 id="les-scripts-dexemple">Les scripts d'exemple</h2>
+<p>Le code Python précédent est un script, qui applique le projet à notre exemple concret d'un fichier Rinex issu de la station GODS le 04/05/2024.
+<strong>Il fait appel à chacune des fonctions du projet, dans l'ordre logique de son fonctionnement</strong>.</p>
+<p>C'est en général ce que l'on veut faire avec un <strong>script d'exemple</strong>.</p>
+<p>L'idée est de faire comprendre à l'utilisateur comment le projet fonctionne, sur un <strong>exemple représentatif</strong> de ce pour quoi le projet a été conçu.</p>
+<p>Dans l'idéal, il faudrait que le script soit executable directement par l'utilisateur, d'un simple clic.
+On peut néanmoins définir des paramètres d'entrée modifiables en début de script.</p>
+<p>Pour cela, il faut impérativement que le script soit <strong>bien commenté !</strong>
+L'utilisateur doit pouvoir le lire comme un tutoriel.</p>
+<h2 id="completer-pys1c_unit_testpy">Compléter PyS1C_unit_test.py</h2>
+<p>Ouvrez le fichier "PyS1C_unit_test.py" de votre projet.</p>
+<p>Complétez-la avec le code suivant :</p>
+<pre><code>###############################################################################
+#HEADER
+
+#This script automatize unit tests for functions &quot;read&quot; and &quot;pivot&quot; of PyS1C.
+#Tests are performed on the example Rinex file provided along with this project 
+#(station GODS - 04/05/2024).
+
+#Author: Arthur DENT
+
+###############################################################################
+
+#Libraries importation:--------------------------------------------------------
+import os
+import PyS1C
+
+#Input directory:--------------------------------------------------------------
+
+#Define the path of the input Rinex file:
+input_path = os.path.join(os.path.dirname(__file__),'GODS00USA_R_20241250000_01D_30S_MO.rnx')
+
+#Unit tests script:------------------------------------------------------------
+
+#Check the &quot;read&quot; function:
+df_sat_data = PyS1C.read(input_path)
+assert list(df_sat_data.columns.values)==['date', 'epoch', 'sat', 's1c'], 'PyS1C.read: Wrong DataFrame columns!'
+assert len(df_sat_data)==29047, 'PyS1C.read: Wrong number of lines in the DataFrame!'
+assert str(df_sat_data['date'].loc[0])=='2024-05-04 00:00:00' and str(df_sat_data['date'].loc[29046])=='2024-05-04 23:59:30', 'PyS1C.read: Wrong time period in the DataFrame'
+assert df_sat_data['epoch'].max()==2880, 'PyS1C.read: Wrong number of epochs!'
+assert df_sat_data['sat'].max()&lt;=32 and df_sat_data['sat'].min()&gt;=1, 'PyS1C.read: Invalid GPS satellite number!'
+assert round(df_sat_data['s1c'].mean(),5)==43.20223, 'PyS1C.read: Problem with the S1C values!'
+print('PyS1C.read: checked!')
+
+#Check the &quot;pivot&quot; function:
+df_pivot = PyS1C.pivot(df_sat_data)
+assert list(df_pivot.columns.values)==['date', 'sat'], 'PyS1C.pivot: Wrong DataFrame columns!'
+assert len(df_pivot)==2880, 'PyS1C.pivot: Wrong number of lines in the DataFrame!'
+assert str(df_pivot['date'].loc[0])=='2024-05-04 00:00:00' and str(df_pivot['date'].loc[2879])=='2024-05-04 23:59:30', 'PyS1C.pivot: Wrong time period in the DataFrame'
+assert df_pivot['sat'].max()&lt;=32 and df_pivot['sat'].min()&gt;=1, 'PyS1C.pivot: Invalid GPS satellite number!'
+assert round(df_pivot['sat'].mean(),5)==14.32083, 'PyS1C.pivot: Problem with the pivot numbers!'
+print('PyS1C.pivot: checked!')
+</code></pre>
+<p>Si vous faites tourner ce script, et que vous n'avez fait aucune erreur de programmation, vous devriez voir s'afficher sur la console Python :</p>
+<pre><code>PyS1C.read: checked!
+PyS1C.pivot: checked!
+</code></pre>
+<p>Comme vous pouvez le voir, ces tests sont basés sur la méthode "assert" de Python.
+Voyons comment réaliser des tests sous Python, et comment fonctionne cette méthode "assert".</p>
+<h2 id="les-tests-unitaires">Les tests unitaires</h2>
+<p>Il est important de pouvoir vérifier en un seul clic qu'<strong>une modification de notre projet n'entrainera pas des bugs</strong>.
+D'où l'intérêt d'écrire des scripts de tests, afin d'<strong>automatiser</strong> cette vérification.</p>
+<p>Comme nous l'avons expliqué plus tôt lors de ce tutoriel, nous n'implémenterons ici que des <strong>tests unitaires</strong>, et uniquement ceux des fonctions de lecture ("read") et de traitement ("pivot").
+C'est aussi ce qui sera attendu de vous pour votre projet évalué.</p>
+<p>S'il bien entendu impossible d'être complètement exhaustifs dans nos tests, l'idée est d'anticiper le maximum de bugs possibles, en réalisant des <strong>tests représentatifs des cas d'utilisations</strong> de votre projet.</p>
+<p>Voici quelques fonctions utiles pour réaliser des tests de vos fonctions.</p>
+<p>Ce n'est pas le cas dans notre projet ici, mais il est recommandé d'ajouter à vos fonctions des vérifications de vos entrées / sorties, afin de retourner un <strong>message d'erreur</strong> avec la méthode "<strong>raise ValueError</strong>" :</p>
+<pre><code>if ...:
+    raise ValueError('...')
+</code></pre>
+<p>Vous pouvez mettre le message d'erreur que vous voulez.
+Il est à noter qu'il existe d'autres types d'erreurs que "ValueError" en Python.</p>
+<p>Lors de vos tests, pour vérifier que les erreurs sont bien détectées (que la fonction retourne un message d'erreur), vous pouvez utiliser "<strong>try</strong>" et "<strong>except</strong>" :</p>
+<pre><code>try: 
+    ...
+except ValueError:
+    print('Error detected!')
+</code></pre>
+<p>L'idée est que le programme essaye de faire tourner les lignes de codes dans le "try", et que si une erreur "ValueError" est détectée, le message d'erreur "Error detected!" s'affiche dans la console grâce à la fonction "<strong>print</strong>".</p>
+<p>Enfin, comme pour notre projet, vous pouvez utiliser la méthode "<strong>assert</strong>" afin de vérifier que la fonction renvoit bien la sortie à laquelle vous vous attendez.
+Dans le cas contraire, la méthode affichera un message d'erreur.</p>
+<p>Par exemple, si on veut vérifier qu'une fonction "test_func()" retourne bien 2 quand on lui donne 1 en entrée :</p>
+<pre><code>assert test_func(1)==2, 'test_func NOK'
+</code></pre>
+<p>Si la fonction ne retourne pas la valeur attendue, le message "test_func NOK" s'affichera.</p>
+<p>Essayez à présent de comprendre les test qui sont réalisés par notre script de tests.
+Avez-vous des idées d'autres tests qui pourraient être réalisés ?</p>
+<hr />
+<p>Nous avons à présent dans notre projet des scripts d'exemple et de test, appliquant notre projet à l'exemple concret de la station GODS.
+Dans la dernière partie de ce tutoriel, nous allons écrire une documentation en Markdown pour notre projet.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../5_Export_affichage/" class="btn btn-neutral float-left" title="5. Export et affichage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../7_Documentation/" class="btn btn-neutral float-right" title="7. Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../5_Export_affichage/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../7_Documentation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
